@@ -36,6 +36,12 @@ module.exports = {
       last_min_temp: {
         type: DataTypes.INTEGER
       },
+      harvest_max_temp: {
+        type:DataTypes.INTEGER,
+      },
+      harvest_temp: {
+        type:DataTypes.INTEGER,
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE

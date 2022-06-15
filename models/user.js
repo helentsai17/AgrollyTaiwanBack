@@ -9,8 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Question }) {
-      this.hasMany(Question, { foreignKey: 'userId' , as: 'questions'})
+    static associate(models) {
+      this.hasMany(models.Question, { foreignKey: 'userId', as: 'questions' })
+      this.hasMany(models.Message, { foreignKey: 'userId', as: 'messages' })
     }
     toJSON() {
       return { ...this.get(), id: undefined }
@@ -46,10 +47,10 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate:{
-        notNull:{msg:'User must have a email to register'},
-        notEmpty:{msg:'User must have a email to register'},
-        isEmail:{msg:'Must be a valid email address'}
+      validate: {
+        notNull: { msg: 'User must have a email to register' },
+        notEmpty: { msg: 'User must have a email to register' },
+        isEmail: { msg: 'Must be a valid email address' }
       }
     },
     token: {

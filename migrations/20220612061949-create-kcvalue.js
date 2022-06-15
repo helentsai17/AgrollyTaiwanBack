@@ -30,13 +30,13 @@ module.exports = {
       harvest_kc:{
         type:DataTypes.FLOAT
       },
-      inital_day:{
+      inital_days:{
         type:DataTypes.INTEGER
       },
-      dev_day:{
+      dev_days:{
         type:DataTypes.INTEGER
       },
-      mid_day:{
+      mid_days:{
         type:DataTypes.INTEGER
       },
       last_days:{

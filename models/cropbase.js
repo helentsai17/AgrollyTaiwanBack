@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.hasMany(models.Kcvalue, { foreignKey: 'cropId' , as: 'kcvalue'})
       this.hasOne(models.Temperature, { foreignKey: 'cropId' , as: 'temperature'})
+      this.hasMany(models.Fertilize, { foreignKey: 'cropId' , as: 'fertilize'})
     }
   }
   Cropbase.init({
