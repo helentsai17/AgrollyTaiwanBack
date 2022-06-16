@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.hasMany(models.Question, { foreignKey: 'userId', as: 'questions' })
       this.hasMany(models.Message, { foreignKey: 'userId', as: 'messages' })
+   
     }
     toJSON() {
       return { ...this.get(), id: undefined }

@@ -21,6 +21,9 @@ module.exports = {
       type: {
         type: DataTypes.STRING,
       },
+      feature:{
+        type:DataTypes.STRING
+      },
       discription: {
         type: DataTypes.TEXT
       },

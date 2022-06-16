@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { Cropbase, kcvalue , Temperature} = require('../models')
+const { Cropbase, kcvalue, Temperature, CropPest, PestDisease } = require('../models')
 
 
 
@@ -41,7 +41,7 @@ router.post('/add', async (req, res) => {
 })
 
 //get crops list
-router.get('/list', async(req,res) =>{
+router.get('/list', async (req, res) => {
     try {
         const crops = await Cropbase.findAll()
         return res.json(Cropbase)
@@ -57,7 +57,7 @@ router.get('/detailinfo/:id', async (req, res) => {
     try {
         const crop = await Cropbase.findOne({
             where: { id },
-            include: [ 'kcvalue','temperature']
+            include: ['kcvalue', 'temperature']
         })
 
         return res.json(crop)
@@ -66,6 +66,58 @@ router.get('/detailinfo/:id', async (req, res) => {
         return res.status(500).json({ error: 'error came from crop detail' })
     }
 })
+
+
+
+// add pest to cropbase
+router.post('/croppest', async (req, res) => {
+    const { cropId, pestId } = req.body
+
+    try {
+        const post = await CropPest.create({ cropId, pestId })
+        return res.json(post)
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+
+router.get('/croppest/:id', async (req, res) => {
+    const id = req.params.id
+    try {
+        const crop = await Cropbase.findOne({
+            where: { id },
+            include: [
+                {
+                    model: CropPest,
+                    as: 'croppest',
+                    attributes : ['pestId'],
+                    include: [
+                        { 
+                            model: PestDisease , 
+                            as:'pestdisease',
+                            attributes : ['pic_path','name','name_en','type','discription'],
+                        }
+                      
+                      ]
+                },
+                // {
+                //     model: PestDisease,
+                //     as: 'pestdisease',
+                //     through: { attributes: 'pestId' }
+                // }
+            ]
+            // include: [ 'croppest']
+        })
+
+        return res.json(crop)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({ error: 'error came from crop detail' })
+    }
+})
+
+
 
 
 module.exports = router;
