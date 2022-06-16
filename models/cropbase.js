@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasOne(models.Temperature, { foreignKey: 'cropId' , as: 'temperature'})
       this.hasMany(models.Fertilize, { foreignKey: 'cropId' , as: 'fertilize'})
       this.hasMany(models.CropPest, { foreignKey: 'cropId' , as: 'croppest'})
+      this.hasMany(models.UserLikeCrop, { foreignKey: 'cropId' , as: 'userlikecrop'})
     }
   }
   Cropbase.init({

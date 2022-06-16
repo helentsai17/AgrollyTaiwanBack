@@ -81,6 +81,19 @@ router.post('/croppest', async (req, res) => {
     }
 })
 
+router.post('/croppest/delete/:id', async (req, res) => {
+    const croppestId = req.params.id
+
+    try {
+        const croppest = await CropPest.findOne({where:{id:croppestId}})
+        await croppest.destroy()
+
+        return res.json('crop pest got destoryed')
+    } catch (err) {
+        console.log(err)
+    }
+})
+
 
 router.get('/croppest/:id', async (req, res) => {
     const id = req.params.id
@@ -91,7 +104,7 @@ router.get('/croppest/:id', async (req, res) => {
                 {
                     model: CropPest,
                     as: 'croppest',
-                    attributes : ['pestId'],
+                    attributes : ['id'],
                     include: [
                         { 
                             model: PestDisease , 
@@ -101,13 +114,9 @@ router.get('/croppest/:id', async (req, res) => {
                       
                       ]
                 },
-                // {
-                //     model: PestDisease,
-                //     as: 'pestdisease',
-                //     through: { attributes: 'pestId' }
-                // }
+               
             ]
-            // include: [ 'croppest']
+          
         })
 
         return res.json(crop)

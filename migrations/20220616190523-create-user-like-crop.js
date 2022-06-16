@@ -1,19 +1,19 @@
 'use strict';
 module.exports = {
   async up(queryInterface, DataTypes) {
-    await queryInterface.createTable('croppests', {
+    await queryInterface.createTable('userlikecrops', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      cropId: {
-        type: DataTypes.INTEGER,
+      userId: {
+        type:DataTypes.INTEGER,
         allowNull:false
       },
-      pestId: {
-        type: DataTypes.INTEGER,
+      cropId: {
+        type:DataTypes.INTEGER,
         allowNull:false
       },
       createdAt: {
@@ -27,6 +27,6 @@ module.exports = {
     });
   },
   async down(queryInterface, DataTypes) {
-    await queryInterface.dropTable('cropPests');
+    await queryInterface.dropTable('userlikecrops');
   }
 };

@@ -14,6 +14,7 @@ var Temperature = require('./route/Temperature')
 var Message = require('./route/Message')
 var Fertilize = require('./route/Fertilize')
 var PestDisease = require('./route/PestDisease')
+var Like = require('./route/UserLikeCrop')
 
 app.use('/users', Users)
 app.use('/question', Question)
@@ -23,6 +24,7 @@ app.use('/kc', KcValue)
 app.use('/temp', Temperature)
 app.use('/fertilize', Fertilize)
 app.use('/pestdisease', PestDisease)
+app.use('/like', Like)
 
 app.listen(port, async () => {
     console.log('Server is running on port: ' + port)
