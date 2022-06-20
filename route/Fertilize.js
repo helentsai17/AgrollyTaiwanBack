@@ -12,6 +12,28 @@ router.post('/add', async (req, res) => {
     } catch (err) {
         console.log(err)
     }
+
 })
+
+
+router.put('/edit/:id', async(req, res) =>{
+    const FertilizeId = req.params.id
+    const { stage, content  } = req.body
+    
+    try {
+        const fertilize = await Fertilize.findOne({where: {id:FertilizeId}})
+        
+        fertilize.stage = stage
+        fertilize.content = content
+
+        await fertilize.save()
+        return res.json(fertilize)
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ error: 'error came from edit fertilize' })
+    }
+})
+
 
 module.exports = router;

@@ -38,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     country: {
       type: DataTypes.STRING,
+      default:'Taiwan'
     },
     region: {
       type: DataTypes.STRING,

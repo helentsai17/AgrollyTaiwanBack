@@ -25,6 +25,7 @@ module.exports = {
       },
       country: {
         type: DataTypes.STRING,
+        default:'Taiwan'
       },
       region: {
         type: DataTypes.STRING,

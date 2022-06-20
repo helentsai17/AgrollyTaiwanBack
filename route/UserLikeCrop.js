@@ -1,60 +1,42 @@
 const express = require('express')
 const router = express.Router()
-const { UserLikeCrop, Cropbase } = require('../models')
+const { User ,UserLikeCrop, Cropbase } = require('../models')
 
 
-router.post('/add', (req, res) => {
+router.post('/add', async(req, res) => {
+    const {uuid, cropId} = req.body;
 
-
-    const userLikeCrop = {
-        userId: req.body.userId,
-        cropId: req.body.cropId
-    }
+    const user = await User.findOne({ where: { uuid: uuid } })
 
     UserLikeCrop.findOne({
         where: {
-            userId: req.body.userId,
-            cropId: req.body.cropId
+            userId: user.id,
+            cropId: cropId
         }
-    })
-        .then(exit => {
+    }).then(exit => {
             if (!exit) {
-                UserLikeCrop.create(userLikeCrop)
+                UserLikeCrop.create({userId: user.id, cropId})
                     .then(() =>
                         res.json({ status: "user like crop created" }))
                     .catch(err => {
                         res.send('error: ' + err)
                     })
             } else {
-                res.status(500).json({ error: 'favorite already exit' })
+                res.status(500).json({ error: 'user like crop already exit' })
             }
         })
 })
 
-//find all the user like crop
-router.get('/:userId', function (req, res, next) {
-    
-    UserLikeCrop.findAll({
-      where: { userId: req.params.userId },
-      attributes: ['userId', 'cropId'],
-      include: 'cropbase'
 
-    }).then( userlike => {
-      res.json(userlike)
-    }).catch(err => {
-        res.send('error: ' + err)
-    })
-  
-})
+router.delete("/delete/:uuid/:cropId",async(req, res, next) =>{
+    const UserUuid = req.params.uuid
 
+    const user = await User.findOne({ where: { uuid: UserUuid } })
 
-
-//Todo: delect favorate using cid and rid
-router.delete("/delete/:cid/:pid",function(req, res, next){
     UserLikeCrop.destroy({
         where:{
-            userId:req.params.cid,
-            userId:req.params.pid
+            userId: user.id,
+            cropId: req.body.cropId
         }
     })
     .then(()=>{
@@ -66,6 +48,22 @@ router.delete("/delete/:cid/:pid",function(req, res, next){
 
 })
 
+
+//find all the user like crop
+router.get('/:userUuid', function (req, res, next) {
+    
+    UserLikeCrop.findAll({
+      where: { userUuid: req.params.userUuid },
+      attributes: ['userId', 'cropId'],
+      include: 'cropbase'
+
+    }).then( userlike => {
+      res.json(userlike)
+    }).catch(err => {
+        res.send('error: ' + err)
+    })
+  
+})
 
 
 module.exports = router;

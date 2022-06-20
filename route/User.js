@@ -2,13 +2,13 @@ const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const { User } = require('../models')
+const { User, UserLikeCrop, Cropbase } = require('../models')
 
 const dotenv = require('dotenv')
 dotenv.config({ path: '.env' })
 
 router.post('/register', (req, res) => {
-    const { first_name, last_name, user_image, country, region, city, email, password, token, phone, position, member, type, verify } = req.body
+    const { first_name, last_name, user_image, country, region, city, email, password, token, phone, position, member, verify } = req.body
 
     if (!email) {
         res.status(400).json({
@@ -131,10 +131,10 @@ router.get('/users', async (req, res) => {
     }
 })
 
-router.get('/:id', function (req, res, next) {
+router.get('/:uuid', function (req, res, next) {
     User.findOne({
         where: {
-            uuid: req.params.id
+            uuid: req.params.uuid
         }
     })
         .then(user => {
@@ -172,12 +172,12 @@ router.put('/region/edit/:uuid', async (req, res) => {
             country: req.body.country,
             region: req.body.region,
             city: req.body.city,
-        },{ where: { uuid: req.params.uuid } })
+        }, { where: { uuid: req.params.uuid } })
 
         return res.json(userupdate)
     } catch (err) {
         console.log(err)
-        return res.status(500).json({error:"user region update dose not work out"})
+        return res.status(500).json({ error: "user region update dose not work out" })
     }
 })
 
@@ -187,24 +187,59 @@ router.put('/edit/:uuid', function (req, res, next) {
         {
             first_name: req.body.first_name,
             last_name: req.body.last_name,
-            country: req.body.country,
             region: req.body.region,
             city: req.body.city,
             phone: req.body.phone,
             position: req.body.position,
 
         },
-        { where: { user_id: req.params.id } })
+        { where: { uuid: req.params.uuid } })
         .then(() => {
             res.json({ status: 'successful updated' })
         })
-        .catch(err => console.log('error: ' + err));
+        .catch(err => {
+            console.log('error: ' + err)
+            res.status(500).json({ error: "user edit error" })
+        });
 
 
 })
 
+//change password
+router.put('/passwordreset/:uuid', function (req, res, next) {
+
+    User.findOne({
+        where: {
+            uuid: req.params.uuid
+        }
+    }).then(user => {
+        if (user) {
+            if (bcrypt.compareSync(req.body.oldPassword, user.password)) {
+                console.log("old password correct")
+                bcrypt.hash(req.body.newPassword, 10, (err, hash) => {
+                    req.body.newPassword = hash
+                    User.update(
+                        { password: req.body.newPassword },
+                        { where: { uuid: req.params.uuid } }
+                    ).then(() => {
+                        console.log("password update")
+                        res.json({ status: 'password successful update' })
+                    }).catch(err => console.log('error: ' + err));
+                })
+            } else {
+                res.status(400).json({ error: 'the old password is not correct' })
+            }
+        }
+    }).catch(err => {
+        res.send('error: ' + err)
+    })
+
+
+})
+
+
 //find all the question that the user have
-router.get('/question/:uuid', async (req, res) => {
+router.get('/questions/:uuid', async (req, res) => {
     const uuid = req.params.uuid
     try {
         const user = await User.findOne({
@@ -219,6 +254,39 @@ router.get('/question/:uuid', async (req, res) => {
     }
 })
 
+//find all the user like crop
+router.get('/like/:uuid', async (req, res, next) => {
+    const uuid = req.params.uuid
+
+    try {
+        const user = await User.findOne({
+            where: { uuid },
+            include: [
+                {
+                    model: UserLikeCrop,
+                    as: 'userlikecrop',
+                    attributes: ['cropId'],
+                    include: [
+                        {
+                            model: Cropbase,
+                            as: 'cropbase',
+                            // attributes : ['pic_path','name','name_en','type','discription'],
+                        }
+
+                    ]
+                },
+
+            ]
+
+        })
+
+        return res.json(user)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({ error: 'error came from user like' })
+    }
+
+})
 
 
 module.exports = router
