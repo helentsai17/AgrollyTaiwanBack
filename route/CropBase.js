@@ -79,7 +79,7 @@ router.put('/edit/:cropId', async (req, res) => {
 router.get('/list', async (req, res) => {
     try {
         const crops = await Cropbase.findAll()
-        return res.json(Cropbase)
+        return res.json(crops)
     } catch (err) {
         console.log(err)
         return res.status(500).json({ error: "Something went wrong" })
