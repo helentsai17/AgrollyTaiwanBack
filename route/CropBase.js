@@ -1,8 +1,9 @@
 const express = require('express')
+
 const router = express.Router()
 
-const { Cropbase, kcvalue, Temperature, CropPest, PestDisease, User, UserLikeCrop } = require('../models')
-
+const { Cropbase, kcvalue, Temperature, CropPest, PestDisease, User, UserLikeCrop, sequelize } = require('../models')
+const { Op } = require("sequelize");
 
 //add crop base information
 router.post('/add', async (req, res) => {
@@ -82,6 +83,31 @@ router.get('/list', async (req, res) => {
         return res.json(crops)
     } catch (err) {
         console.log(err)
+        return res.status(500).json({ error: "Something went wrong" })
+    }
+})
+
+router.get('/search', async (req, res) => {
+    // ?type=tom
+    let type = req.query.type == null ? "" : req.query.type
+    let water_sensitive = req.query.water_sensitive
+    let season = req.query.season
+    var month = req.query.month
+
+    try {
+        const crops = await Cropbase.findAll({
+            where: {
+                type: type == undefined ? { [Op.ne]: 'undefined' }:{ [Op.like]: `%${type}%` },
+                water_sensitive: water_sensitive == undefined ? { [Op.ne]: 0 }: { [Op.eq]: parseInt(water_sensitive) },
+                season_string: season == undefined ? { [Op.ne]: 'undefined'} : {[Op.like]: `%${season}%`},
+                reco_start: month == undefined ? { [Op.ne]: -1 } : {[Op.gte]: parseFloat(month)},
+                reco_end: month == undefined ? { [Op.ne]: -1 } :{ [Op.lte]: parseFloat(month)+1}
+            }
+        })
+
+        return res.json(crops)
+    } catch (error) {
+        console.log(error)
         return res.status(500).json({ error: "Something went wrong" })
     }
 })
@@ -178,7 +204,7 @@ router.get('/like/:cropId', async (req, res, next) => {
                         {
                             model: User,
                             as: 'user',
-                            attributes : ['first_name','last_name','country','email','position'],
+                            attributes: ['first_name', 'last_name', 'country', 'email', 'position'],
                         }
 
                     ]
@@ -198,3 +224,5 @@ router.get('/like/:cropId', async (req, res, next) => {
 
 
 module.exports = router;
+
+
