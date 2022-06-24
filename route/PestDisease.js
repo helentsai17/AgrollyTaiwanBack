@@ -1,14 +1,17 @@
 const express = require('express')
 const router = express.Router()
 const { PestDisease, CropPestDisease } = require('../models')
-
+const multer = require('multer')
+const upload = multer({ dest: 'pestuploads/' })
+const { uploadFile, getFileStream } = require('../s3')
+require('dotenv').config
 
 router.post('/add', async (req, res) => {
 
-    const { pic_ptah, name, name_en, type, feature ,discription } = req.body
+    const { pic_path, name, name_en, type, feature, discription } = req.body
 
     try {
-        const cropBase = await PestDisease.create({ pic_ptah, name, name_en, type, feature ,discription})
+        const cropBase = await PestDisease.create({ pic_path, name, name_en, type, feature, discription })
         return res.json(cropBase)
     } catch (err) {
         console.log(err)
@@ -18,24 +21,40 @@ router.post('/add', async (req, res) => {
 
 })
 
-router.get('/list', async(req, res) =>{
+router.get('/images/:key', (req, res) => {
+    const key = req.params.key
+    const readStream = getFileStream(key)
+    console.log(readStream)
+    readStream.pipe(res)
+})
+
+router.put('/uploadimage/:pestId', upload.single('file'), async (req, res) => {
+    const pestId = req.params.pestId
 
     try {
-        const pests = await PestDisease.findAll()
+
+        const file = req.file
+        console.log(file)
+        const result = await uploadFile(file)
+        console.log(result)
+        const pests = await PestDisease.findOne({ where: { id: pestId } })
+        pests.pic_path = `${process.env.BACKENDURL}/pestdisease/images/${result.Key}`
+        await pests.save()
         return res.json(pests)
-    } catch (err) {
-        console.log(err)
-        return res.status(500).json({ error: "Something went wrong getting pests" })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ error: 'pest image storage error' })
     }
+
 })
 
 
-router.put('/pd/:id', async(req, res) =>{
+router.put('/edit/:id', async (req, res) => {
     const pestId = req.params.id
-    const { pic_ptah, name, name_en, type, feature ,discription } = req.body
+    const { pic_ptah, name, name_en, type, feature, discription } = req.body
     try {
-        const pests = await PestDisease.findOne({where: {id:pestId}})
-        
+        const pests = await PestDisease.findOne({ where: { id: pestId } })
+
         pests.pic_ptah = pic_ptah
         pests.name = name
         pests.name_en = name_en
@@ -48,6 +67,17 @@ router.put('/pd/:id', async(req, res) =>{
     } catch (error) {
         console.log(error)
         return res.status(500).json({ error: 'error came from getting user question' })
+    }
+})
+
+router.get('/list', async (req, res) => {
+
+    try {
+        const pests = await PestDisease.findAll()
+        return res.json(pests)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({ error: "Something went wrong getting pests" })
     }
 })
 

@@ -15,7 +15,6 @@ router.post('/add', async (req, res) => {
 
 })
 
-
 router.put('/edit/:id', async(req, res) =>{
     const FertilizeId = req.params.id
     const { stage, content  } = req.body

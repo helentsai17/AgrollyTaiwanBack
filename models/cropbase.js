@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
     },
     total_grow_time: {
-      type:DataTypes.INTEGER,
+      type:DataTypes.STRING,
     },
     type: {
       type:DataTypes.STRING,

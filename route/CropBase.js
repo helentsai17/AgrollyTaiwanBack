@@ -1,8 +1,12 @@
 const express = require('express')
+const multer = require('multer')
+const upload = multer({ dest: 'cropuploads/' })
+const { uploadFile, getFileStream } = require('../s3')
+require('dotenv').config
 
 const router = express.Router()
 
-const { Cropbase, kcvalue, Temperature, CropPest, PestDisease, User, UserLikeCrop, sequelize } = require('../models')
+const { Cropbase, Kcvalue, Temperature, Fertilize, CropPest, PestDisease, User, UserLikeCrop, sequelize } = require('../models')
 const { Op } = require("sequelize");
 
 //add crop base information
@@ -38,6 +42,32 @@ router.post('/add', async (req, res) => {
         return res.status(500).json({ error: 'create crop base infomation fall' })
     }
 
+
+})
+
+router.get('/images/:key', (req, res) => {
+    const key = req.params.key
+    const readStream = getFileStream(key)
+    console.log(readStream)
+    readStream.pipe(res)
+})
+
+router.put('/uploadimage/:cropId', upload.single('file'), async (req, res) => {
+    const cropId = req.params.cropId
+
+    try {
+        const file = req.file
+        console.log(file)
+        const result = await uploadFile(file)
+        console.log(result)
+        const crops = await Cropbase.findOne({ where: { id: cropId } })
+        crops.crop_image = `${process.env.BACKENDURL}/crops/images/${result.Key}`
+        await crops.save()
+        return res.json(crops)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ error: 'crop image storage error' })
+    }
 
 })
 
@@ -97,11 +127,11 @@ router.get('/search', async (req, res) => {
     try {
         const crops = await Cropbase.findAll({
             where: {
-                type: type == undefined ? { [Op.ne]: 'undefined' }:{ [Op.like]: `%${type}%` },
-                water_sensitive: water_sensitive == undefined ? { [Op.ne]: 0 }: { [Op.eq]: parseInt(water_sensitive) },
-                season_string: season == undefined ? { [Op.ne]: 'undefined'} : {[Op.like]: `%${season}%`},
-                reco_start: month == undefined ? { [Op.ne]: -1 } : {[Op.gte]: parseFloat(month)},
-                reco_end: month == undefined ? { [Op.ne]: -1 } :{ [Op.lte]: parseFloat(month)+1}
+                type: type == undefined ? { [Op.ne]: 'undefined' } : { [Op.like]: `%${type}%` },
+                water_sensitive: water_sensitive == undefined ? { [Op.ne]: 0 } : { [Op.eq]: parseInt(water_sensitive) },
+                season_string: season == undefined ? { [Op.ne]: 'undefined' } : { [Op.like]: `%${season}%` },
+                reco_start: month == undefined ? { [Op.ne]: -1 } : { [Op.gte]: parseFloat(month) },
+                reco_end: month == undefined ? { [Op.ne]: -1 } : { [Op.lte]: parseFloat(month) + 1 }
             }
         })
 
@@ -112,8 +142,8 @@ router.get('/search', async (req, res) => {
     }
 })
 
-//find one
-router.get('/detailinfo/:id', async (req, res) => {
+//find one crop base with kcvalue and temperature
+router.get('/calvalue/:id', async (req, res) => {
     const id = req.params.id
     try {
         const crop = await Cropbase.findOne({
@@ -129,31 +159,51 @@ router.get('/detailinfo/:id', async (req, res) => {
 })
 
 
-// add relationship: pest and cropbase lookup 
-router.post('/croppest', async (req, res) => {
-    const { cropId, pestId } = req.body
-
+router.get('/detailinfo/:id', async (req, res) => {
+    const id = req.params.id
     try {
-        const post = await CropPest.create({ cropId, pestId })
-        return res.json(post)
+        const cropAllInfo = await Cropbase.findOne({
+            where: { id },
+            include: [
+                {
+                    model: Kcvalue,
+                    as: 'kcvalue',
+
+                },
+                {
+                    model: Temperature,
+                    as: 'temperature',
+
+                },
+                {
+                    model: Fertilize,
+                    as: 'fertilize',
+
+                },
+                {
+                    model: CropPest,
+                    as: 'croppest',
+                    attributes: ['id'],
+                    include: [
+                        {
+                            model: PestDisease,
+                            as: 'pestdisease',
+                            attributes: ['pic_path', 'name', 'name_en', 'type', 'discription'],
+                        }
+
+                    ]
+                },
+
+            ]
+        })
+
+        return res.json(cropAllInfo)
     } catch (err) {
         console.log(err)
+        return res.status(500).json({ error: 'error came from crop all detail' })
     }
 })
 
-//delete crop and pest's relationship
-router.post('/croppest/delete/:id', async (req, res) => {
-    const croppestId = req.params.id
-
-    try {
-        const croppest = await CropPest.findOne({ where: { id: croppestId } })
-        await croppest.destroy()
-
-        return res.json('crop pest got destoryed')
-    } catch (err) {
-        console.log(err)
-    }
-})
 
 //get crop's all pest information
 router.get('/croppest/:cropId', async (req, res) => {
@@ -222,6 +272,32 @@ router.get('/like/:cropId', async (req, res, next) => {
 
 })
 
+
+// create relationship: pest and cropbase lookup 
+router.post('/croppest', async (req, res) => {
+    const { cropId, pestId } = req.body
+
+    try {
+        const post = await CropPest.create({ cropId, pestId })
+        return res.json(post)
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+//delete crop and pest's relationship
+router.post('/croppest/delete/:id', async (req, res) => {
+    const croppestId = req.params.id
+
+    try {
+        const croppest = await CropPest.findOne({ where: { id: croppestId } })
+        await croppest.destroy()
+
+        return res.json('crop pest got destoryed')
+    } catch (err) {
+        console.log(err)
+    }
+})
 
 module.exports = router;
 

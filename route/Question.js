@@ -26,6 +26,25 @@ router.get('/posts', async (req, res) => {
     }
 })
 
+router.put('/edit/:id', async(req, res) =>{
+    const quesitonUuid = req.params.id
+    const { content } = req.body
+    
+    try {
+        const question = await Question.findOne({where: {uuid:quesitonUuid}})
+        
+        question.content = content
+
+        await question.save()
+        return res.json(question)
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ error: 'error came from edit question' })
+    }
+})
+
+
 // get all the answer relate to the question
 router.get('/answer/:questionId', async (req, res) => {
     const questionId = req.params.questionId

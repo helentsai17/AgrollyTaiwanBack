@@ -24,7 +24,7 @@ module.exports = {
       position: 'developer',
       email: 'helentsaidev@gmail.com',
       phone: "917-704-1172",
-      password: "123",
+      password: "$2b$10$yvQeEht1Agz0Zd3tjvuNnuQcxb0mJEJGrrGqLSIcoN92BJKq1U34S",
       type: "email register",
       createdAt: '2022-06-15',
       updatedAt: '2022-06-15' 
@@ -41,7 +41,7 @@ module.exports = {
       position: 'user',
       email: '123@123.com',
       phone: "000-000-000",
-      password: "123",
+      password: "$2b$10$yvQeEht1Agz0Zd3tjvuNnuQcxb0mJEJGrrGqLSIcoN92BJKq1U34S",
       type: "email register",
       createdAt: '2022-06-15',
       updatedAt: '2022-06-15' 
@@ -58,7 +58,7 @@ module.exports = {
       position: 'farmer',
       email: 'abc@abc.com',
       phone: "000-000-000",
-      password: "abc",
+      password: "$2b$10$yvQeEht1Agz0Zd3tjvuNnuQcxb0mJEJGrrGqLSIcoN92BJKq1U34S",
       type: "email register",
       createdAt: '2022-06-15',
       updatedAt: '2022-06-15' 

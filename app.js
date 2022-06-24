@@ -1,10 +1,11 @@
 var express = require('express')
 const { sequelize } = require('./models')
-
+var cors = require('cors')
 var app = express()
 var port = process.env.PORT || 5000
 
 app.use(express.json())
+app.use(cors()) 
 
 var Users = require('./route/User');
 var Question = require('./route/Question')
