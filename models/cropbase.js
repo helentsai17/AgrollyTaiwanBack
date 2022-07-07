@@ -4,11 +4,7 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Cropbase extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+ 
     static associate(models) {
       this.hasMany(models.Kcvalue, { foreignKey: 'cropId' , as: 'kcvalue'})
       this.hasOne(models.Temperature, { foreignKey: 'cropId' , as: 'temperature'})
@@ -17,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.UserLikeCrop, { foreignKey: 'cropId' , as: 'userlikecrop'})
     }
   }
+  
   Cropbase.init({
     common_name: {
       type:DataTypes.STRING,

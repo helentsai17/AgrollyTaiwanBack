@@ -28,6 +28,21 @@ router.get('/images/:key', (req, res) => {
     readStream.pipe(res)
 })
 
+//find one crop base with kcvalue and temperature
+router.get('/detailInfo/:id', async (req, res) => {
+    const pestId = req.params.id
+    try {
+        const pestinfo = await PestDisease.findOne({
+            where: { id:pestId },
+        })
+
+        return res.json(pestinfo)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({ error: 'error came from pest detail' })
+    }
+})
+
 router.put('/uploadimage/:pestId', upload.single('file'), async (req, res) => {
     const pestId = req.params.pestId
 
@@ -47,7 +62,6 @@ router.put('/uploadimage/:pestId', upload.single('file'), async (req, res) => {
     }
 
 })
-
 
 router.put('/edit/:id', async (req, res) => {
     const pestId = req.params.id
