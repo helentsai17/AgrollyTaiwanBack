@@ -34,5 +34,17 @@ router.put('/edit/:id', async(req, res) =>{
     }
 })
 
+router.delete('/delete/:id', async (req, res) => {
+    const Id = req.params.id
+
+    try {
+        const fertilize = await Fertilize.findOne({ where: { id: Id } })
+        await fertilize.destroy()
+
+        return res.json('crop pest got destoryed')
+    } catch (err) {
+        console.log(err)
+    }
+})
 
 module.exports = router;

@@ -286,7 +286,7 @@ router.post('/croppest', async (req, res) => {
 })
 
 //delete crop and pest's relationship
-router.post('/croppest/delete/:id', async (req, res) => {
+router.delete('/croppest/delete/:id', async (req, res) => {
     const croppestId = req.params.id
 
     try {

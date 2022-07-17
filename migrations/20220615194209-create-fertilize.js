@@ -16,7 +16,7 @@ module.exports = {
         type: DataTypes.STRING
       },
       stage: {
-        type: DataTypes.STRING
+        type: DataTypes.INTEGER
       },
       content: {
         type: DataTypes.STRING
