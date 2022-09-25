@@ -1,6 +1,8 @@
 var express = require('express')
+require('dotenv').config
 const { sequelize } = require('./models')
 var cors = require('cors')
+
 var app = express()
 var port = process.env.PORT || 5000
 
