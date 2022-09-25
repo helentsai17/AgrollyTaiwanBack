@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
  
     static associate(models) {
       this.hasMany(models.Kcvalue, { foreignKey: 'cropId' , as: 'kcvalue'})
-      this.hasOne(models.Temperature, { foreignKey: 'cropId' , as: 'temperature'})
+      this.hasMany(models.Temperature, { foreignKey: 'cropId' , as: 'temperature'})
       this.hasMany(models.Fertilize, { foreignKey: 'cropId' , as: 'fertilize'})
       this.hasMany(models.CropPest, { foreignKey: 'cropId' , as: 'croppest'})
       this.hasMany(models.UserLikeCrop, { foreignKey: 'cropId' , as: 'userlikecrop'})
@@ -27,6 +27,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false
     },
     sub_names:{
+      type:DataTypes.STRING,
+    },
+    variety:{
       type:DataTypes.STRING,
     },
     season_string: {

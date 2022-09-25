@@ -22,6 +22,9 @@ module.exports = {
       sub_names:{
         type:DataTypes.STRING,
       },
+      variety:{
+        type:DataTypes.STRING,
+      },
       season_string: {
         type:DataTypes.STRING,
       },

@@ -10,9 +10,18 @@ router.post('/add', async (req, res) => {
 
     const { pic_path, name, name_en, type, feature, discription } = req.body
 
+    const pestDiseasedata = {
+        pic_path: 'pest_defult.jpeg',
+        name: name,
+        name_en: name_en,
+        type: type,
+        feature: feature,
+        discription: discription,
+    }
+
     try {
-        const cropBase = await PestDisease.create({ pic_path, name, name_en, type, feature, discription })
-        return res.json(cropBase)
+        const cropPest = await PestDisease.create(pestDiseasedata)
+        return res.json(cropPest)
     } catch (err) {
         console.log(err)
         return res.status(500).json({ error: 'create pest disese infomation fall' })

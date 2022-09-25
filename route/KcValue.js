@@ -3,11 +3,12 @@ const router = express.Router()
 const { Kcvalue, Cropbase } = require('../models')
 
 router.post('/kcvalue', async (req, res) => {
-    const { cropId, location, inital_kc, dev_kc, mid_kc, last_kc, harvest_kc, inital_days, dev_days, mid_days, last_days, harvest_days, ref } = req.body
+    const { cropId, location, inital_kc, dev_kc, mid_kc, last_kc, harvest_kc, inital_days, dev_days, mid_days, last_days, harvest_days, version ,ref } = req.body
 
     try {
         const crop = await Cropbase.findOne({ where: { id: cropId } })
-        const kcvalue = await Kcvalue.create({ cropId: crop.id, location, inital_kc, dev_kc, mid_kc, last_kc, harvest_kc, inital_days, dev_days, mid_days, last_days, harvest_days, ref  })
+        console.log(crop)
+        const kcvalue = await Kcvalue.create({ cropId: crop.id, location, inital_kc, dev_kc, mid_kc, last_kc, harvest_kc, inital_days, dev_days, mid_days, last_days, harvest_days, version ,ref  })
         return res.json(kcvalue)
     } catch (err) {
         console.log(err)
@@ -17,7 +18,7 @@ router.post('/kcvalue', async (req, res) => {
 
 router.put('/edit/:id', async(req, res) =>{
     const Id = req.params.id
-    const { inital_kc, dev_kc, mid_kc, last_kc, harvest_kc, inital_days, dev_days, mid_days, last_days, harvest_days } = req.body
+    const { inital_kc, dev_kc, mid_kc, last_kc, harvest_kc, inital_days, dev_days, mid_days, last_days, harvest_days, version } = req.body
     
     try {
         const kcvalue = await Kcvalue.findOne({where: {id:Id}})
@@ -34,6 +35,8 @@ router.put('/edit/:id', async(req, res) =>{
         kcvalue.mid_days = mid_days
         kcvalue.last_days = last_days
         kcvalue.harvest_days = harvest_days
+
+        kcvalue.version = version
        
 
 

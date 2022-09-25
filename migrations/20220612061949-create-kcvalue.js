@@ -45,6 +45,9 @@ module.exports = {
       harvest_days:{
         type:DataTypes.INTEGER
       },
+      version:{
+        type:DataTypes.STRING 
+      },
       ref:{
         type:DataTypes.STRING 
       },

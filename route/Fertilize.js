@@ -4,10 +4,12 @@ const { Fertilize, Cropbase } = require('../models')
 
 router.post('/add', async (req, res) => {
     const { cropId, stage, content  } = req.body
-
+    console.log(cropId)
+    console.log(stage)
+    console.log(content)
     try {
-        const crop = await Cropbase.findOne({ where: { id: cropId } })
-        const fertilize = await Fertilize.create({ cropId: crop.id, stage, content   })
+        const crop = await Cropbase.findOne({ where: { id : cropId } })
+        const fertilize = await Fertilize.create({ cropId:crop.id , stage, content   })
         return res.json(fertilize)
     } catch (err) {
         console.log(err)

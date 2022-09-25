@@ -39,7 +39,7 @@ module.exports = {
       harvest_max_temp: {
         type:DataTypes.INTEGER,
       },
-      harvest_temp: {
+      harvest_min_temp: {
         type:DataTypes.INTEGER,
       },
       createdAt: {

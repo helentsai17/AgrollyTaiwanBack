@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Cropbase, { foreignKey: 'cropId', as:'cropbase' })
       this.belongsTo(models.PestDisease, { foreignKey: 'pestId', as:'pestdisease' })
+      
     }
 
     toJSON() {

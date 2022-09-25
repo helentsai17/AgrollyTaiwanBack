@@ -19,7 +19,7 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       content: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
       },
       createdAt: {
         allowNull: false,
