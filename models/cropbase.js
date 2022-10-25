@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Temperature, { foreignKey: 'cropId' , as: 'temperature'})
       this.hasMany(models.Fertilize, { foreignKey: 'cropId' , as: 'fertilize'})
       this.hasMany(models.CropPest, { foreignKey: 'cropId' , as: 'croppest'})
-      this.hasMany(models.UserLikeCrop, { foreignKey: 'cropId' , as: 'userlikecrop'})
+      this.hasMany(models.UserLikeCrop, { foreignKey: 'cropId' , as: 'userlikecrop'})//crop be like by many user
+      this.hasMany(models.UserCrop, { foreignKey: 'cropId' , as: 'usercrop'})//crop be plan by many user
+      this.hasMany(models.Verifydata, { foreignKey: 'cropId' , as: 'verify'})//crop be plan by many user
     }
   }
   

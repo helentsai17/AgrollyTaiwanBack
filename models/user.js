@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Question, { foreignKey: 'userId', as: 'questions' })
       this.hasMany(models.Message, { foreignKey: 'userId', as: 'messages' })
       this.hasMany(models.UserLikeCrop, { foreignKey: 'userId' , as: 'userlikecrop'})
+      this.hasMany(models.UserCrop, { foreignKey: 'userId' , as: 'usercrop'})
     }
     toJSON() {
       return { ...this.get(), id: undefined }
@@ -76,6 +77,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     verify: {
       type: DataTypes.BOOLEAN,
+    },
+    verification_string:{
+      type: DataTypes.UUID,
     }
   }, {
     sequelize,

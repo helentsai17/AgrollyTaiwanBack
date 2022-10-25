@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.Message, { foreignKey: 'questionId', as:'question' })
-      this.belongsTo(models.User,{foreignKey: 'userId', as:'user'})
+      this.belongsTo(models.User, {foreignKey: 'userId', as:'user'})
     }
   }
   Message.init({

@@ -1,4 +1,6 @@
 var express = require('express')
+var bodyParser  = require('body-parser');
+
 require('dotenv').config
 const { sequelize } = require('./models')
 var cors = require('cors')
@@ -8,6 +10,9 @@ var port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(cors()) 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 var Users = require('./route/User');
 var Question = require('./route/Question')
@@ -18,6 +23,10 @@ var Message = require('./route/Message')
 var Fertilize = require('./route/Fertilize')
 var PestDisease = require('./route/PestDisease')
 var Like = require('./route/UserLikeCrop')
+var UserCrop = require('./route/UserCrop')
+var VerifyData = require('./route/Verifydata');
+var Forecast = require('./route/Forecast')
+
 
 app.use('/users', Users)
 app.use('/question', Question)
@@ -28,6 +37,9 @@ app.use('/temp', Temperature)
 app.use('/fertilize', Fertilize)
 app.use('/pestdisease', PestDisease)
 app.use('/like', Like)
+app.use('/usercrop', UserCrop)
+app.use('/verify', VerifyData)
+app.use('/forecast', Forecast)
 
 app.listen(port, async () => {
     console.log('Server is running on port: ' + port)

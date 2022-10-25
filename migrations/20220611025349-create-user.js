@@ -42,7 +42,6 @@ module.exports = {
       },
       password: {
         type: DataTypes.STRING,
-        
       },
       phone: {
         type: DataTypes.STRING
@@ -53,7 +52,6 @@ module.exports = {
       },
       member: {
         type: DataTypes.STRING,
-        
       },
       type: {
         type: DataTypes.STRING,
@@ -61,6 +59,9 @@ module.exports = {
       },
       verify:{
         type: DataTypes.BOOLEAN,
+      },
+      verification_string:{
+        type: DataTypes.UUID,
       },
       createdAt: {
         allowNull: false,

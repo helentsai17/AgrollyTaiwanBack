@@ -6,8 +6,10 @@ router.post('/answerpost', async (req, res) => {
     const { UserUuid ,questionId, message } = req.body
 
     try {
-        const question = await Question.findOne({ where: { id: questionId } })
+        const question = await Question.findOne({ where: { uuid: questionId } })
         const user = await User.findOne({where: { uuid: UserUuid }  })
+        // console.log(user.id);
+        // console.log(question.id)
         const answer = await Message.create({ message, userId:user.id , questionId: question.id })
         return res.json({ message: "answer post successfully" , post : answer })
     } catch (err) {
@@ -33,6 +35,20 @@ router.get('/useranswer/:answerId', async (req, res) => {
 
 })
 
+//get question answer
+router.get('/answer/:id', async function (req, res, next) {
+
+    const question = await Question.findOne({ where: { uuid: req.params.id } })
+
+    Message.findAll({
+      where: {
+        questionId: question.id
+      }, include: [{ model: User, as: 'user' }] 
+    }).then(message => {
+      res.json(message)
+    })
+    .catch(err => console.log('error get message : ' + err));
+  })
 
 
 

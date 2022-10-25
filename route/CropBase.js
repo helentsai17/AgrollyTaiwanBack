@@ -131,7 +131,7 @@ router.get('/search', async (req, res) => {
             where: {
                 type: type == undefined ? { [Op.ne]: 'undefined' } : { [Op.like]: `%${type}%` },
                 water_sensitive: water_sensitive == undefined ? { [Op.ne]: 0 } : { [Op.eq]: parseInt(water_sensitive) },
-                season_string: season == undefined ? { [Op.ne]: 'undefined' } : { [Op.like]: `%${season}%` },
+                season_string: season == undefined ? { [Op.ne]: 'undefined' } : {[Op.or]:{ [Op.like]: `%${season}%`}},
                 reco_start: month == undefined ? { [Op.ne]: -1 } : { [Op.gte]: parseFloat(month) },
                 reco_end: month == undefined ? { [Op.ne]: -1 } : { [Op.lte]: parseFloat(month) + 1 }
             }

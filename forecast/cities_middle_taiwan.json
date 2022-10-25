@@ -1,0 +1,52 @@
+[
+  {
+    "Position": 1,
+    "City": "Miaoli",
+    "Code": "M1",
+    "State": "middle",
+    "Hemisphere": "N",
+    "Latitude": 24.5602,
+    "Longitude": 120.8214,
+    "po_place": 25
+  },
+  {
+    "Position": 2,
+    "City": "Taichung",
+    "Code": "M2",
+    "State": "middle",
+    "Hemisphere": "N",
+    "Latitude": 24.1477,
+    "Longitude": 120.6736,
+    "po_place": 25
+  },
+  {
+    "Position": 3,
+    "City": "Zhanghua",
+    "Code": "M3",
+    "State": "middle",
+    "Hemisphere": "N",
+    "Latitude": 24.0717,
+    "Longitude": 120.5624,
+    "po_place": 25
+  },
+  {
+    "Position": 4,
+    "City": "Yunlin",
+    "Code": "M4",
+    "State": "middle",
+    "Hemisphere": "N",
+    "Latitude": 23.7092,
+    "Longitude": 120.4313,
+    "po_place": 25
+  },
+  {
+    "Position": 5,
+    "City": "Nantou",
+    "Code": "M5",
+    "State": "middle",
+    "Hemisphere": "N",
+    "Latitude": 23.918,
+    "Longitude": 120.6775,
+    "po_place": 25
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "Position": 1,
+    "City": "Keelung",
+    "Code": "M1",
+    "State": "North",
+    "Hemisphere": "N",
+    "Latitude": 25.1276,
+    "Longitude": 121.7392,
+    "po_place": 25
+  },
+  {
+    "Position": 2,
+    "City": "Taipei",
+    "Code": "M2",
+    "State": "North",
+    "Hemisphere": "N",
+    "Latitude": 25.033,
+    "Longitude": 121.5654,
+    "po_place": 25
+  },
+  {
+    "Position": 3,
+    "City": "Yilan",
+    "Code": "M3",
+    "State": "North",
+    "Hemisphere": "N",
+    "Latitude": 22.6158,
+    "Longitude": 120.712,
+    "po_place": 25
+  },
+  {
+    "Position": 4,
+    "City": "Hsinchu",
+    "Code": "M4",
+    "State": "North",
+    "Hemisphere": "N",
+    "Latitude": 24.8138,
+    "Longitude": 120.9675,
+    "po_place": 25
+  },
+  {
+    "Position": 5,
+    "City": "Taoyuan",
+    "Code": "M5",
+    "State": "North",
+    "Hemisphere": "N",
+    "Latitude": 24.9554,
+    "Longitude": 121.23,
+    "po_place": 25
+  }
+]

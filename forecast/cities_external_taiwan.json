@@ -1,0 +1,22 @@
+[
+  {
+    "Position": 1,
+    "City": "Penghu",
+    "Code": "M1",
+    "State": "external",
+    "Hemisphere": "N",
+    "Latitude": 23.5833,
+    "Longitude": 119.5833,
+    "po_place": 25
+  },
+  {
+    "Position": 2,
+    "City": "Kinmen",
+    "Code": "M2",
+    "State": "external",
+    "Hemisphere": "N",
+    "Latitude": 24.4943,
+    "Longitude": 118.4163,
+    "po_place": 25
+  }
+]

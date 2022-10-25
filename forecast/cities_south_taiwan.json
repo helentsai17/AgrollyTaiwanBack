@@ -1,0 +1,42 @@
+[
+  {
+    "Position": 1,
+    "City": "Jiayi",
+    "Code": "M1",
+    "State": "south",
+    "Hemisphere": "N",
+    "Latitude": 23.4801,
+    "Longitude": 120.4491,
+    "po_place": 25
+  },
+  {
+    "Position": 2,
+    "City": "Tainan",
+    "Code": "M2",
+    "State": "south",
+    "Hemisphere": "N",
+    "Latitude": 22.9999,
+    "Longitude": 120.2269,
+    "po_place": 25
+  },
+  {
+    "Position": 3,
+    "City": "Kaohsiung",
+    "Code": "M3",
+    "State": "south",
+    "Hemisphere": "N",
+    "Latitude": 22.6273,
+    "Longitude": 120.3014,
+    "po_place": 25
+  },
+  {
+    "Position": 4,
+    "City": "Pingtung",
+    "Code": "M4",
+    "State": "south",
+    "Hemisphere": "N",
+    "Latitude": 22.6558,
+    "Longitude": 120.4703,
+    "po_place": 25
+  }
+]

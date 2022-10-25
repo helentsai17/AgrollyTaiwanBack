@@ -1,0 +1,22 @@
+[
+  {
+    "Position": 1,
+    "City": "Taitung",
+    "Code": "M1",
+    "State": "east",
+    "Hemisphere": "N",
+    "Latitude": 22.7613,
+    "Longitude": 121.1438,
+    "po_place": 25
+  },
+  {
+    "Position": 2,
+    "City": "Hualian",
+    "Code": "M2",
+    "State": "east",
+    "Hemisphere": "N",
+    "Latitude": 23.9911,
+    "Longitude": 121.6112,
+    "po_place": 25
+  }
+]
