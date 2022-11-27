@@ -30,13 +30,12 @@ router.post('/add', async(req, res) => {
 
 router.delete("/delete/:uuid/:cropId",async(req, res, next) =>{
     const UserUuid = req.params.uuid
-
     const user = await User.findOne({ where: { uuid: UserUuid } })
 
     UserLikeCrop.destroy({
         where:{
             userId: user.id,
-            cropId: req.body.cropId
+            cropId: req.params.cropId
         }
     })
     .then(()=>{
@@ -50,10 +49,12 @@ router.delete("/delete/:uuid/:cropId",async(req, res, next) =>{
 
 
 //find all the user like crop
-router.get('/:userUuid', function (req, res, next) {
+router.get('/:userUuid', async function (req, res, next) {
+
+    const user = await User.findOne({ where: { uuid: req.params.userUuid } })
     
     UserLikeCrop.findAll({
-      where: { userUuid: req.params.userUuid },
+      where: { userId: user.id },
       attributes: ['userId', 'cropId'],
       include: 'cropbase'
 

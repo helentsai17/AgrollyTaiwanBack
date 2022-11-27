@@ -6,13 +6,13 @@ const { User, UserCrop, Cropbase } = require("../models");
 router.post("/", async function (req, res, next) {
   const { useruuid, cropId, start_date, field_size, location, note, meta } =
     req.body;
-  var startDate = new Date(start_date)
+  var startDate = new Date(start_date);
   try {
     const user = await User.findOne({ where: { uuid: useruuid } });
     const usercrop = UserCrop.create({
       userId: user.id,
       cropId,
-      start_date:startDate,
+      start_date: startDate,
       field_size,
       location,
       note,
@@ -25,63 +25,91 @@ router.post("/", async function (req, res, next) {
 });
 
 //update userCrop
-router.put('/edit/:uuid', async (req, res) =>{
-    const usercropId = req.params.uuid
-    const { field_size, note } = req.body;
+router.put("/edit/:uuid", async (req, res) => {
+  const usercropId = req.params.uuid;
+  const { field_size, note } = req.body;
 
-    try{
-        const usercrop = await UserCrop.findOne({ where: { uuid: usercropId } })
-        usercrop.field_size = field_size
-        usercrop.note = note
-        
-        Usercrop.save()
+  try {
+    const usercrop = await UserCrop.findOne({ where: { uuid: usercropId } });
+    usercrop.field_size = field_size;
+    usercrop.note = note;
 
-        return res.json(usercrop)
-    }catch(err){
-        return res.status(500).json({ error: 'did not update successfully' })
-    }
+    Usercrop.save();
 
-})
+    return res.json(usercrop);
+  } catch (err) {
+    return res.status(500).json({ error: "did not update successfully" });
+  }
+});
 
 //update metadata crop time
-router.put('/metaupdate/:uuid', async (req, res) =>{
-    const usercropId = req.params.uuid
-    const { meta } = req.body;
+router.put("/metaupdate/:uuid", async (req, res) => {
+  const usercropId = req.params.uuid;
+  const { meta } = req.body;
 
-    try{
-        const usercrop = await UserCrop.findOne({ where: { uuid: usercropId } })
-        usercrop.meta = meta
-        Usercrop.save()
+  try {
+    const usercrop = await UserCrop.findOne({ where: { uuid: usercropId } });
+    usercrop.meta = meta;
+    Usercrop.save();
 
-        return res.json(usercrop)
-    }catch(err){
-        return res.status(500).json({ error: 'did not update successfully' })
-    }
-
-})
+    return res.json(usercrop);
+  } catch (err) {
+    return res.status(500).json({ error: "did not update successfully" });
+  }
+});
 
 //update show to detete crop
-router.put('/delete/:uuid', async (req, res) =>{
-    const usercropId = req.params.uuid
+router.put("/delete/:uuid", async (req, res) => {
+  const uuid = req.params.uuid;
+  const { userCropId } = req.body;
+  try {
+    const usercrop = await UserCrop.findOne({ where: { uuid: uuid } });
+    usercrop.show = false;
+    usercrop.save();
 
-    try{
-        const usercrop = await UserCrop.findOne({ where: { uuid: usercropId } })
-        usercrop.show = false
-        Usercrop.save()
-
-        return res.json(usercrop)
-    }catch(err){
-        return res.status(500).json({ error: 'did not update successfully' })
-    }
-
-})
+    return res.json(usercrop);
+  } catch (err) {
+    return res.status(500).json({ error: "did not update successfully" });
+  }
+});
 
 //get all crop that the user plan
-router.get("/:userUuid", async function (req, res, next) {
+router.get("/usercrop/:userUuid", async function (req, res, next) {
   try {
     const user = await User.findOne({ where: { uuid: req.params.userUuid } });
+
+    const usercrop = await UserCrop.findAll({
+      where: { userId: user.id, show: true },
+      include: [
+        // { model: User, as: "user" },
+        { model: Cropbase, as: "cropbase" },
+      ],
+    });
+
+    return res.json(usercrop);
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/:usercropUuid", async function (req, res, next) {
+  try {
+    const usercrop = await UserCrop.findOne({
+      where: { uuid: req.params.usercropUuid },
+      include: [{ model: Cropbase, as: "cropbase" }],
+    });
+
+    return res.json(usercrop);
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+});
+
+//find crop plant by users
+router.get("/cropuser/:cropId", async function (req, res, next) {
+  try {
     const usercrop = UserCrop.findAll({
-      where: { userId: user.id , show:true},
+      where: { cropId: req.params.cropId },
       include: [
         { model: User, as: "user" },
         { model: Cropbase, as: "cropbase" },
@@ -92,27 +120,5 @@ router.get("/:userUuid", async function (req, res, next) {
     return res.status(500).json({ error: err.message });
   }
 });
-
-//find crop plant by users
-router.get("/:cropId", async function (req, res, next) {
-  try {
-    const usercrop = UserCrop.findAll({
-      where: { cropId: req.params.cropId },
-      include: [
-        { model: User, as: "user" },
-        { model: Cropbase, as: "cropbase" },
-      ],
-    });
-    return res.json(usercrop)
-  } catch (err) {
-    return res.status(500).json({ error: err.message });
-
-  }
-});
-
-
-
-
-
 
 module.exports = router;

@@ -4,15 +4,19 @@ const { User, Verifydata, Cropbase } = require("../models");
 
 //create complain
 router.post("/", async function (req, res, next) {
-  const { useruuid, cropId, location, issue_type, feedback } = req.body;
+  const { userId, cropId, location, start_plant, issue_type, issue_state, feedback, meta, note} = req.body;
   try {
-    const user = await User.findOne({ where: { uuid: useruuid } })
+    const user = await User.findOne({ where: { uuid: userId } })
     const verify = Verifydata.create({
       userId:user.id,
       cropId,
       location,
+      start_plant,
       issue_type,
+      issue_state,
       feedback,
+      meta,
+      note
     });
     return res.json(verify);
   } catch (error) {

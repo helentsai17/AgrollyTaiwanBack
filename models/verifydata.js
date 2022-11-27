@@ -22,15 +22,21 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      title: { 
+        type: DataTypes.STRING
+      },
       location: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      start_plant:{
+        type:DataTypes.STRING
       },
       issue_type: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      issue_stage: {
+      issue_state: {
         type: DataTypes.STRING,
         allowNull: true,
       },
@@ -38,7 +44,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull:true
       },
-      
+      meta:{
+        type : DataTypes.JSON
+      },
+      note: { 
+        type: DataTypes.STRING
+      }  
     },
     {
       sequelize,

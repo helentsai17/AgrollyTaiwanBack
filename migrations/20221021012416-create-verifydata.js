@@ -20,17 +20,27 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      start_plant:{
+        type:DataTypes.STRING
+      },
       issue_type: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      issue_stage: {
+      issue_state: {
         type: DataTypes.STRING,
         allowNull: true,
       },
       feedback: {
         type: DataTypes.TEXT,
         allowNull: true
+      },
+      meta:{
+        type : DataTypes.JSON,
+        allowNull: true,
+      },
+      note: { 
+        type: DataTypes.STRING
       },
       createdAt: {
         allowNull: false,
