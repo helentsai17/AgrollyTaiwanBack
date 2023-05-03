@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { User, UserCrop, Cropbase } = require("../models");
+const { User, UserCrop, Cropbase, Kcvalue } = require("../models");
 
 //add crop to user
 router.post("/", async function (req, res, next) {
@@ -81,8 +81,9 @@ router.get("/usercrop/:userUuid", async function (req, res, next) {
     const usercrop = await UserCrop.findAll({
       where: { userId: user.id, show: true },
       include: [
-        // { model: User, as: "user" },
+       // { model: User, as: "user" },
         { model: Cropbase, as: "cropbase" },
+       
       ],
     });
 
@@ -96,7 +97,9 @@ router.get("/:usercropUuid", async function (req, res, next) {
   try {
     const usercrop = await UserCrop.findOne({
       where: { uuid: req.params.usercropUuid },
-      include: [{ model: Cropbase, as: "cropbase" }],
+      include: [
+        { model: Cropbase, as: "cropbase" },
+    ],
     });
 
     return res.json(usercrop);
@@ -113,6 +116,7 @@ router.get("/cropuser/:cropId", async function (req, res, next) {
       include: [
         { model: User, as: "user" },
         { model: Cropbase, as: "cropbase" },
+        
       ],
     });
     return res.json(usercrop);

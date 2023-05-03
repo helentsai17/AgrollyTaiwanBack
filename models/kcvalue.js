@@ -51,6 +51,9 @@ module.exports = (sequelize, DataTypes) => {
     harvest_days:{
       type:DataTypes.INTEGER
     },
+    discription:{
+      type:DataTypes.TEXT
+    },
     version:{
       type:DataTypes.STRING 
     },

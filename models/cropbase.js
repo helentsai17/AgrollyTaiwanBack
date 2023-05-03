@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.CropPest, { foreignKey: 'cropId' , as: 'croppest'})
       this.hasMany(models.UserLikeCrop, { foreignKey: 'cropId' , as: 'userlikecrop'})//crop be like by many user
       this.hasMany(models.UserCrop, { foreignKey: 'cropId' , as: 'usercrop'})//crop be plan by many user
-      this.hasMany(models.Verifydata, { foreignKey: 'cropId' , as: 'verify'})//crop be plan by many user
+      this.hasMany(models.Verifydata, { foreignKey: 'cropId' , as: 'verify'})//crop can be verify by many user
+      this.hasMany(models.Media, { foreignKey: 'cropId' , as: 'media'})//crop has many media source
     }
   }
   
@@ -28,7 +29,16 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false
     },
-    sub_names:{
+    icon:{
+      type:DataTypes.STRING
+    },
+    planting_method:{
+      type:DataTypes.STRING,
+    },
+    breed:{
+      type:DataTypes.STRING,
+    },
+    other_name:{
       type:DataTypes.STRING,
     },
     variety:{
@@ -65,11 +75,23 @@ module.exports = (sequelize, DataTypes) => {
     reco_start:{
       type:DataTypes.FLOAT
     },
-    reco_end:{
+    reco_start_end:{
       type:DataTypes.FLOAT
     },
-    distance:{
+    plant_distance_1:{
       type:DataTypes.INTEGER
+    },
+    plant_distance_2:{
+      type:DataTypes.INTEGER
+    },
+    line_distance:{
+      type:DataTypes.INTEGER,
+    },
+    per_are:{
+      type:DataTypes.INTEGER,
+    },
+    soil:{
+      type: DataTypes.STRING,
     },
     ph:{
       type:DataTypes.STRING

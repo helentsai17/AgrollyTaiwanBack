@@ -44,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
     harvest_min_temp: {
       type:DataTypes.INTEGER,
     },
+    discription:{
+      type:DataTypes.TEXT
+    }
   }, {
     sequelize,
     tableName:'temperatures',

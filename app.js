@@ -26,6 +26,7 @@ var Like = require('./route/UserLikeCrop')
 var UserCrop = require('./route/UserCrop')
 var VerifyData = require('./route/Verifydata');
 var Forecast = require('./route/Forecast')
+var Media = require('./route/Media')
 
 
 app.use('/users', Users)
@@ -40,6 +41,7 @@ app.use('/like', Like)
 app.use('/usercrop', UserCrop)
 app.use('/verify', VerifyData)
 app.use('/forecast', Forecast)
+app.use('/media', Media)
 
 app.listen(port, async () => {
     console.log('Server is running on port: ' + port)

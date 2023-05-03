@@ -67,4 +67,22 @@ router.get('/:userUuid', async function (req, res, next) {
 })
 
 
+router.get('/:userUuid/:cropID', async function (req, res, next) {
+
+    const user = await User.findOne({ where: { uuid: req.params.userUuid } })
+    
+    UserLikeCrop.findAll({
+      where: { userId: user.id , cropId: req.params.cropID},
+      attributes: ['userId', 'cropId'],
+      include: 'cropbase'
+
+    }).then( userlike => {
+      res.json(userlike)
+    }).catch(err => {
+        res.send('error: ' + err)
+    })
+  
+})
+
+
 module.exports = router;

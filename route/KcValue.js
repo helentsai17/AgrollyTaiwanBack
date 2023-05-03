@@ -50,4 +50,16 @@ router.put('/edit/:id', async(req, res) =>{
 })
 
 
+router.get("/:id", async function (req, res, next) {
+    try {
+      const cropKc = await Kcvalue.findAll({
+        where: { cropId: req.params.id }
+      });
+  
+      return res.json(cropKc);
+    } catch (err) {
+      return res.status(500).json({ error: err.message });
+    }
+  });
+
 module.exports = router;

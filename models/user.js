@@ -27,7 +27,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      notNull: { msg: 'User must have first name' },
+      notEmpty: { msg: 'First name can not be empty' },
     },
     last_name: {
       type: DataTypes.STRING,
