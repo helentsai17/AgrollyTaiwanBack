@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.UserCrop, { foreignKey: 'cropId' , as: 'usercrop'})//crop be plan by many user
       this.hasMany(models.Verifydata, { foreignKey: 'cropId' , as: 'verify'})//crop can be verify by many user
       this.hasMany(models.Media, { foreignKey: 'cropId' , as: 'media'})//crop has many media source
+      this.hasMany(models.Seasonplant, { foreignKey: 'cropId' , as: 'seasonplant'})
+      this.hasMany(models.Plantmonth, { foreignKey: 'cropId' , as: 'plantmonth'})
     }
   }
   
@@ -30,16 +32,18 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false
     },
     icon:{
+      //images
       type:DataTypes.STRING
     },
     planting_method:{
       type:DataTypes.STRING,
+      allowNull:true
     },
     breed:{
       type:DataTypes.STRING,
     },
     other_name:{
-      type:DataTypes.STRING,
+      type:DataTypes.TEXT,
     },
     variety:{
       type:DataTypes.STRING,
@@ -47,12 +51,17 @@ module.exports = (sequelize, DataTypes) => {
     season_string: {
       type:DataTypes.STRING,
     },
+    /*
     total_grow_time: {
       type:DataTypes.STRING,
     },
+    */
     type: {
       type:DataTypes.STRING,
       allowNull:false
+    },
+    short_discription: {
+      type: DataTypes.TEXT,
     },
     discription:{
       type:DataTypes.TEXT
@@ -72,12 +81,14 @@ module.exports = (sequelize, DataTypes) => {
     best_temp:{
       type:DataTypes.STRING
     },
+    /*
     reco_start:{
       type:DataTypes.FLOAT
     },
     reco_start_end:{
       type:DataTypes.FLOAT
     },
+    */
     plant_distance_1:{
       type:DataTypes.INTEGER
     },

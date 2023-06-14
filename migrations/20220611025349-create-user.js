@@ -48,7 +48,6 @@ module.exports = {
       },
       position: {
         type: DataTypes.STRING,
-       
       },
       member: {
         type: DataTypes.STRING,

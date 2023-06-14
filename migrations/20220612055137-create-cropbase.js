@@ -26,23 +26,31 @@ module.exports = {
         type: DataTypes.STRING,
       },
       breed: {
+        //breed example 中國南瓜及西洋南瓜的breed 都是南瓜
         type: DataTypes.STRING,
       },
       other_name: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       variety: {
+        //高雄1號, 台南3號等等
         type: DataTypes.STRING,
       },
       season_string: {
         type: DataTypes.STRING,
       },
+      /*
       total_grow_time: {
         type: DataTypes.STRING,
       },
+      */
       type: {
+        //fao的分類
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      short_discription: {
+        type: DataTypes.TEXT,
       },
       discription: {
         type: DataTypes.TEXT,
@@ -62,12 +70,14 @@ module.exports = {
       best_temp: {
         type: DataTypes.STRING,
       },
+      /*
       reco_start: {
         type: DataTypes.FLOAT,
       },
       reco_start_end: {
         type: DataTypes.FLOAT,
       },
+      */
       plant_distance_1: {
         type: DataTypes.INTEGER,
       },
@@ -81,7 +91,7 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       soil:{
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       ph: {
         type: DataTypes.STRING,
