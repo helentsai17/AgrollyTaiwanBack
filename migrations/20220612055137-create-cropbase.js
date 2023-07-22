@@ -38,12 +38,10 @@ module.exports = {
       },
       season_string: {
         type: DataTypes.STRING,
-      },
-      /*
+      }, 
       total_grow_time: {
         type: DataTypes.STRING,
       },
-      */
       type: {
         //fao的分類
         type: DataTypes.STRING,
@@ -87,7 +85,7 @@ module.exports = {
       line_distance: {
         type: DataTypes.INTEGER,
       },
-      per_are: {
+      per_01ha: {
         type: DataTypes.INTEGER,
       },
       soil:{

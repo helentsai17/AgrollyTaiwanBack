@@ -10,9 +10,11 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       cropId: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false,
       },
       daystring: {
+        //ex: 大約120天
         type: DataTypes.STRING
       },
       location: {

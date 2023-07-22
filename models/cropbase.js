@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false
     },
     icon:{
-      //images
+      //images path: /assets/vegetable_icons 
       type:DataTypes.STRING
     },
     planting_method:{
@@ -51,11 +51,9 @@ module.exports = (sequelize, DataTypes) => {
     season_string: {
       type:DataTypes.STRING,
     },
-    /*
     total_grow_time: {
       type:DataTypes.STRING,
     },
-    */
     type: {
       type:DataTypes.STRING,
       allowNull:false
@@ -90,6 +88,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     */
     plant_distance_1:{
+      // 株距 , 行距
       type:DataTypes.INTEGER
     },
     plant_distance_2:{
@@ -97,8 +96,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     line_distance:{
       type:DataTypes.INTEGER,
+      allowNull:true
     },
-    per_are:{
+    //0.1公頃
+    per_01ha:{
       type:DataTypes.INTEGER,
     },
     soil:{

@@ -28,6 +28,48 @@ module.exports = {
       mid_days:42,
       last_days:35,
       version:1,
+    },{
+      //check kc
+      id:3,
+      cropId: 4,
+      type:"高雄5號",
+      inital_kc: 0.4,
+      dev_kc:0.89,
+      mid_kc:0.92,
+      last_kc:0.58,
+      inital_days:6,
+      dev_days:30,
+      mid_days:30,
+      last_days:28,
+      version:1,
+    },{
+      //check kc
+      id:4,
+      cropId: 4,
+      type:"高雄6號",
+      inital_kc: 0.4,
+      dev_kc:0.89,
+      mid_kc:0.92,
+      last_kc:0.58,
+      inital_days:6,
+      dev_days:32,
+      mid_days:28,
+      last_days:30,
+      version:1,
+    },{
+      //check kc
+      id:5,
+      cropId: 4,
+      type:"高雄7號",
+      inital_kc: 0.4,
+      dev_kc:0.89,
+      mid_kc:0.92,
+      last_kc:0.58,
+      inital_days:6,
+      dev_days:36,
+      mid_days:34,
+      last_days:14,
+      version:1,
     }], {});
   
   },
