@@ -95,7 +95,7 @@ module.exports = {
         type: DataTypes.STRING,
       },
       author: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       createdAt: {
         allowNull: false,

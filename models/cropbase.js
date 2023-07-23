@@ -109,7 +109,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING
     }, 
     author:{
-      type:DataTypes.STRING
+      type:DataTypes.TEXT
     },
 
   }, {
