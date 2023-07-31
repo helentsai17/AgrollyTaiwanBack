@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     feature:{
       type:DataTypes.STRING
     },
-    discription: {
+    Description: {
       type:DataTypes.TEXT
     }
   }, {

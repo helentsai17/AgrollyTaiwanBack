@@ -58,10 +58,10 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false
     },
-    short_discription: {
+    short_description: {
       type: DataTypes.TEXT,
     },
-    discription:{
+    Description:{
       type:DataTypes.TEXT
     },
     water_sensitive:{

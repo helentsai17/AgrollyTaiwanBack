@@ -15,21 +15,22 @@ module.exports = {
       },
       daystring: {
         //ex: 大約120天
-        type: DataTypes.STRING
-      },
-      location: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
       },
       plantseason: {
-        //如:春作,秋作
+        //如:春作,秋作, 一期, 二期
         type: DataTypes.STRING
       }, 
-      duration:{
-        type: DataTypes.INTEGER
+      other_description: {
+        //如: 南部, 山區, 種植方法
+        type: DataTypes.STRING
       },
-      duration_description: {
-        //ex:8月上旬至10月中旬
-        type: DataTypes.TEXT
+      duration:{
+        type: DataTypes.JSON
+        //ex { 
+        //     description: 8月上旬至10月中旬 ,
+        //     month: [7.25, 8, 9.50 ]
+        //    }
       },
       createdAt: {
         allowNull: false,

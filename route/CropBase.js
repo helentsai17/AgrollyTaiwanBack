@@ -6,7 +6,7 @@ require('dotenv').config
 
 const router = express.Router()
 
-const { Cropbase, Kcvalue, Temperature, Fertilize, CropPest, PestDisease, User, UserLikeCrop, Media, sequelize } = require('../models')
+const { Cropbase, Kcvalue, Temperature, Fertilize, CropPest, PestDisease, User, UserLikeCrop, Media, Seasonplant,sequelize } = require('../models')
 const { Op } = require("sequelize");
 
 //add crop base information
@@ -167,6 +167,11 @@ router.get('/detailinfo/:id', async (req, res) => {
         const cropAllInfo = await Cropbase.findOne({
             where: { id },
             include: [
+                {
+                    model: Seasonplant,
+                    as: 'seasonplant',
+
+                },
                 {
                     model: Kcvalue,
                     as: 'kcvalue',

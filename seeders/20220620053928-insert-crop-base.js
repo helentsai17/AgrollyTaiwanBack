@@ -22,10 +22,10 @@ module.exports = {
         season_string: "秋",
         type: "Small Vegetables",
         total_grow_time: 270,
-        discription:
+        Description:
           "<p>洋蔥一般喜歡比較冷涼的環境，當溫度大於26度的時候洋蔥頭會出現休眠的狀態，當溫度大於30度，葉片甚至會直接枯萎死亡。在種植之前，需要先為洋蔥準備一個苗床，要選擇地勢比較高並且排水好、土壤肥厚的地方，土壤的酸鹼性適中為宜。種子在播種之前需要先用清水進行12個小時的浸泡，浸泡完種子之後，把種子放到陰涼的環境下進行風乾，然後在放置在25度左右的環境下面進行催芽，在催芽的過程中要每天都清洗一次種子，等到所有種子都露出白芽之後就可以種植了。</p>",
         water_sensitive: 1,
-        crop_image: "onion.jpeg",
+        crop_image: "onion.jpg",
         max_temp: 25,
         min_temp: 15,
         best_temp: "20~25°C",
@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         id: 2,
-        common_name: "maize",
+        common_name: "Maize",
         bio_name: "Zea mays  L.",
         chinese_name: "甜玉米",
         breed: "玉米",
@@ -47,10 +47,10 @@ module.exports = {
         season_string: "春作,秋作",
         type: "Cereals",
         total_grow_time: 90,
-        discription:
+        Description:
           "<p>穗期是玉米的生長過程中最重要的一個時期，是植株生長和生殖生長並進的階段。這一時期玉米苗拔節之後雄穗要開花了，因此要迅速封行，做好管理，因爲這一時期決定着今年玉米的收成，玉米果穗數量的多少、果穗的大小、穗粒的數量都是在這一時間形成的。</p>",
         water_sensitive: 3,
-        crop_image: "Maize.jpeg",
+        crop_image: "maize.jpg",
         max_temp: 40,
         min_temp: 8,
         best_temp: "25～30℃",
@@ -66,18 +66,18 @@ module.exports = {
         common_name: "Adzuki Bean",
         bio_name: "Vigna angularis",
         chinese_name: "紅豆",
-        breed: "紅豆",
+        breed: "豆",
         variety:"高雄2、3、5、6、7號",
         icon:"Beans 2.png",
         other_name: "小豆、赤小豆",
         season_string: "秋作為嘉",
         type: "Legumes (Leguminosae)",
         total_grow_time: "84天-90天",
-        short_discription:"性喜溫暖,不耐低溫,不耐淹水",
-        discription:
+        short_description:"性喜溫暖,不耐低溫,不耐淹水",
+        Description:
           "<p>紅豆對水分的需求，因生長期不同而異。通常播種時土壤宜保持適度水分以促進種子發芽，但過濕時種子易腐爛，過乾則發芽不整齊。生育初期至開花期前宜保持適當濕度，視田間實際情形灌溉1-2次，開花期宜略為乾燥以減少落花，結莢期之籽實充實期間，需要較多水分，至成熟期則宜乾燥環境。</p>",
         water_sensitive: 3,
-        crop_image: "readbean.jpeg",
+        crop_image: "readbean.jpg",
         max_temp: 42,
         min_temp: 10,
         best_temp: "25～30℃",
@@ -99,7 +99,7 @@ module.exports = {
         season_string: "春作,秋作",
         type: "Cereals",
         total_grow_time: 110,
-        discription:
+        Description:
           "<p>高粱開花期遇雨季或高溫 35℃以上均不易受粉(亦即不能結子)，影響產量很大。一般高粱種植後 45-60 天就會開花，開花期間 長約 7-10 天。播種 1.春作金門地區三月下旬至四月中旬前播種，氣溫在 15℃以上最適 宜，秋作於六月下旬至八月上旬播種。 2. 春作播種時避免低溫，以免導致種子不能發芽或幼苗受寒害而枯 死。 3.行株距 60x10 公分，深度 2-4 公分，可採機械或人工播種，每公頃 種子用量 15-20 公斤。灌溉及排水 1. 高粱雖為耐旱作物，但適時適量的灌溉有助於提高產量， 高粱 需水較多的時期為播種期、生育盛期(播種後 20~30 天)、幼穗形 成期(播種後 40~45 天)、抽穗期（播種 60~65 天）及乳熟期(播種 後 75~80 天)，如遇乾旱應行適當灌溉。 2. 由於高粱不耐浸水，因此生育期如遇大雨積水時，尤其在乳熟期 後更應注意排水。排水不良之田區最好不要種植高粱。</p>",
         water_sensitive: 1,
         crop_image: "Sorghum.jpg",
@@ -125,11 +125,11 @@ module.exports = {
         season_string: "春秋二作",
         type: "Cereals",
         total_grow_time: "90~120天, 白殼在來種生育期長達209天",
-        short_discription:"喜高溫多濕氣侯",
-        discription:
+        short_description:"喜高溫多濕氣侯",
+        Description:
           "<p>薏苡喜溫暖濕潤氣候，海拔1200米以下的平地或坡地均可栽培，尤宜在地勢向陽、便於灌溉之處。在抽穗揚花期最怕乾旱，不但結果少而空殼多，籽粒也不飽滿。土壤以肥沃潮濕、中性或微酸性、保水性能良好的黏質壤土最為適宜，乾旱瘠薄的砂土保水保肥力差的土壤不利生長，在過於疏鬆肥沃的砂壤生長，莖葉茂盛，但夏、秋間卻常易倒伏，而且易使莖葉陡長，反而結實不多。不宜連作，也不易以禾本作物為前作。在水田栽培可以增產。</p>",
         water_sensitive: 1,
-        crop_image: "",
+        crop_image: "Adlay.jpg",
         max_temp: 35,
         min_temp: 15,
         best_temp: "25℃~28℃",
@@ -152,10 +152,10 @@ module.exports = {
         variety: "花蓮1號,花蓮2號,台南3號,台南5號",
         type: "Legumes (Leguminosae)",
         total_grow_time: "103~115",
-        discription:
+        Description:
           "<p><strong>灌排水</strong><br>一般大豆全生育期約灌水3~4次，分別在播種前，植株生長2~3個複葉時，幼莢形成期及子粒充實期視田間狀況各灌溉一次，成熟期宜乾燥，灌溉方式以全面灌溉後，隨即排除多餘的水，生育期間若遇有豪雨發生，應儘速排除田間積水。</p><p><strong>溫度&nbsp;</strong></p><p>溫度是影響植物生長的重要 因子，每種植物都有最適當的生 長溫度。臺灣位於亞熱帶地區， 但每逢冬末春初，溫度常低於 15℃ 以下，因此春作大豆播種期 勿過早，以免大豆生育期受到寒 害。低溫對大豆的傷害隨著植株 生育階段不同而異。大豆種子一 般在 10∼40℃ 間均可發芽，但 低溫會降低發芽率及妨礙幼苗出 土，最適發芽溫度為 20∼22℃， 溫度低於 10∼12℃ 大豆發芽受 到抑制，而且土壤溫度太低亦會 延緩種子發芽速率，妨礙幼苗出土，使幼苗容 易受土壤中病菌、害蟲侵襲，影響植株後期的 生長。 大豆營養生長合適溫度為 20∼30℃，溫 度低於 15℃ 以下會造成大豆植株生理上乾 旱，使大豆植株發生凋萎。花芽分化以後溫度 低於 15℃ 或高於 30℃ 發育受阻，影響授粉結 莢；莢果充實期溫度降低到 10∼12℃ 時種子 充實不良，易形成牛皮莢，成熟不完全。</p><p>&nbsp;</p><p>參考資料</p><p><a href='https://book.tndais.gov.tw/Brochure/tech155.pdf'>大豆栽培管理技術</a></p>",
         water_sensitive: 1,
-        crop_image: "bean.jpeg",
+        crop_image: "Soybean.jpg",
         max_temp: 40,
         min_temp: 12,
         best_temp: "20∼30℃",
@@ -178,11 +178,11 @@ module.exports = {
         variety: "臺南5號",
         type: "Legumes (Leguminosae)",
         total_grow_time: "春作約80,81天,夏作約69天即可採收",
-        short_discription:"喜溫熱怕冷,短日照作物,喜光又耐陰,耐旱",
-        discription:
+        short_description:"喜溫熱怕冷,短日照作物,喜光又耐陰,耐旱",
+        Description:
           "<p>綠豆為短期作物，生育期短，從播種至收穫僅65～80天，但是必須妥善栽培管理才能獲得較佳產量。綠豆為暖季作物，對低溫敏感，因此臺灣地區綠豆不適合早春種植，生長期溫度高可促進開花，但是高溫又缺水則易落花導致著莢率低；因此於萌芽期、開花期及果莢充實期需適當水分供給，以增進產量。綠豆較耐貧瘠，對土壤質地選擇不嚴，地勢平坦排水良好，pH值6.2至7.2的黏質壤土、壤土或砂質壤土均適合綠豆的生長，且根部可與根瘤菌共生，固定大氣中的氮素而加以利用，因此良好土壤環境及合理施肥，可促進根瘤菌形成，提高固氮作用。</p>",
         water_sensitive: 1,
-        crop_image: "綠豆.jpg",
+        crop_image: "Mung_bean.jpg",
         max_temp: 32,
         min_temp: 12,
         best_temp: "21～27℃",
@@ -206,10 +206,10 @@ module.exports = {
         season_string: "四季",
         type: "Small Vegetables",
         total_grow_time: "育苗期約25～30天，定植後平地約60~65天可採收",
-        discription:
+        Description:
           "<ul><li>夏季定植後為60~85天，秋季定職後為60~90天</li><li>高麗菜種植約90到100天，是指種子播種日算起之意，高麗菜育苗期約30天左右，定植後50~60天可以採收</li></ul>",
         water_sensitive: 2,
-        crop_image: "Cabbage.jpeg",
+        crop_image: "Cabbage.jpg",
         max_temp: 40,
         min_temp: 10,
         best_temp: "15-25℃",
@@ -231,8 +231,8 @@ module.exports = {
         season_string: "冬季",
         type: "Small Vegetables",
         total_grow_time: "播種到成熟:約115天",
-        short_discription:"半耐寒蔬菜，喜涼爽氣候",
-        discription:
+        short_description:"半耐寒蔬菜，喜涼爽氣候",
+        Description:
           "<p>選擇好地以後，要把土地進行翻新，在翻新的時候，如果土地裡面有比較硬的地方，一定要進行鬆土。翻新的目的也是為了讓土壤裡面更加的乾淨一些，比如說種植紫甘藍的時候，如果土壤裡邊有一些其它植物的根部，那麼就會對於它的生長造成限制。為了它在生長的時候質量更好一些，應該在種植以前在給地裡面施一些有機肥料，只有土地肥沃了才能夠更有利於紫甘藍的種植。</p>",
         water_sensitive: 2,
         crop_image: "redcabbage.jpg",
@@ -259,11 +259,11 @@ module.exports = {
         season_string: "春夏作,秋作",
         type: "Vegetables - Cucumber Family",
         total_grow_time: "高溫期約80天，低溫期約95天；開花至採收 35~40天",
-        short_discription:"喜花高溫, 但極不耐寒",
-        discription:
+        short_description:"喜歡高溫, 但極不耐寒",
+        Description:
           "<p><strong>一、發芽期</strong></p><p>西瓜從播種到第一片真葉顯露，為發芽期。西瓜種子發芽需要適宜的溫度，水分和氧氣。其中最重要的就是溫度，在地溫15--20度時，需要7--13天，溫度越高，發芽越快，溫度低則發芽緩慢。如果遇到不適條件，會引起漚籽，發不出，芽乾等問題，俗語說的好，有錢買籽，沒錢買苗，所以一定要慎重。</p><p><strong>二、幼苗期</strong></p><p>西瓜從第一片真葉顯露到團棵為幼苗期。此時植株展開5--6片真葉，莖的節間很短，植株呈直立狀態，一般需要25--30天。這個時期，葉片正在分化，但生長較慢，而根系生長迅速，所以要進行多次中耕，保持土壤疏鬆。要加蓋地膜，增加土壤溫度，促進根系生長與側根分化，防止發生瓜苗徒長、寒根、漚根燒根等問題。</p><p>幼苗期是花芽的分化期，從第一片真葉顯露，到團棵時，第三雌花的分化已經結束。所以加強苗期管理，可以提高雌花質量，增加雌花密度，降低雌花著生節位。</p><p><strong>三、伸蔓期</strong></p><p>西瓜從團棵到主蔓第二雌花開放為伸蔓期。伸蔓期也稱「孕蕾期」或「甩條發棵期」。一般從團棵到第一雌花開放，約需18天左右，以後每隔3--4天開一朵雌花。伸蔓期節間快速生長，植株從直立狀態變為匍匐狀態，葉片迅速變大。在莖葉生長的同時，根系生長速度逐漸緩慢，伸蔓結束，根系基本建成。</p><p>根據雄花始花期為界，可以分為伸蔓前期和伸蔓後期。前期是蔓葉生長的關鍵時期，所以要集中施肥澆水，促進根系發育和莖葉健壯生長，以積累更多的同化物質，為花器官的正常發育奠定物質基礎。從雄花始花期到主蔓第二雌花開放為伸蔓後期，此時是座果的關鍵時期，所以要適當控制莖葉生長，防止生長過剩而瘋秧，不好坐果。</p><p><strong>四、結果期</strong></p><p>西瓜從第二雌花開放到果實成熟為結果期。在25--30度的溫度下，大約需要28--40天。一般的早熟品種為28--32天，中熟品種為35--40天。這個時期根據果實形態變化和和生長特點，可以分為坐果期，生長期，變瓤期。</p><p>河床砂質地在晴天時，每日需灌足量的水，陰天則隔天一次；而砂壤土應把畦作高，晴天時2~3天灌溉一次，陰雨天則須注意排水，切記田間不可積水，防止雨季來臨或施水量過多而導致根部潰爛。</p>",
         water_sensitive: 3,
-        crop_image: "watermelon.jpg",
+        crop_image: "Watermelon1.png",
         max_temp: 40,
         min_temp: 15,
         best_temp: "20~25℃",
@@ -286,10 +286,10 @@ module.exports = {
         season_string: "春作,夏作,秋作",
         type: "Vegetables - Cucumber Family",
         total_grow_time: "播種至採收 78～92 天，開花至採收 32～38 天。",
-        discription:
+        Description:
           "<p><strong>一、發芽期</strong></p><p>西瓜從播種到第一片真葉顯露，為發芽期。西瓜種子發芽需要適宜的溫度，水分和氧氣。其中最重要的就是溫度，在地溫15--20度時，需要7--13天，溫度越高，發芽越快，溫度低則發芽緩慢。如果遇到不適條件，會引起漚籽，發不出，芽乾等問題，俗語說的好，有錢買籽，沒錢買苗，所以一定要慎重。</p><p><strong>二、幼苗期</strong></p><p>西瓜從第一片真葉顯露到團棵為幼苗期。此時植株展開5--6片真葉，莖的節間很短，植株呈直立狀態，一般需要25--30天。這個時期，葉片正在分化，但生長較慢，而根系生長迅速，所以要進行多次中耕，保持土壤疏鬆。要加蓋地膜，增加土壤溫度，促進根系生長與側根分化，防止發生瓜苗徒長、寒根、漚根燒根等問題。</p><p>幼苗期是花芽的分化期，從第一片真葉顯露，到團棵時，第三雌花的分化已經結束。所以加強苗期管理，可以提高雌花質量，增加雌花密度，降低雌花著生節位。</p><p><strong>三、伸蔓期</strong></p><p>西瓜從團棵到主蔓第二雌花開放為伸蔓期。伸蔓期也稱「孕蕾期」或「甩條發棵期」。一般從團棵到第一雌花開放，約需18天左右，以後每隔3--4天開一朵雌花。伸蔓期節間快速生長，植株從直立狀態變為匍匐狀態，葉片迅速變大。在莖葉生長的同時，根系生長速度逐漸緩慢，伸蔓結束，根系基本建成。</p><p>根據雄花始花期為界，可以分為伸蔓前期和伸蔓後期。前期是蔓葉生長的關鍵時期，所以要集中施肥澆水，促進根系發育和莖葉健壯生長，以積累更多的同化物質，為花器官的正常發育奠定物質基礎。從雄花始花期到主蔓第二雌花開放為伸蔓後期，此時是座果的關鍵時期，所以要適當控制莖葉生長，防止生長過剩而瘋秧，不好坐果。</p><p><strong>四、結果期</strong></p><p>西瓜從第二雌花開放到果實成熟為結果期。在25--30度的溫度下，大約需要28--40天。一般的早熟品種為28--32天，中熟品種為35--40天。這個時期根據果實形態變化和和生長特點，可以分為坐果期，生長期，變瓤期。</p><p>河床砂質地在晴天時，每日需灌足量的水，陰天則隔天一次；而砂壤土應把畦作高，晴天時2~3天灌溉一次，陰雨天則須注意排水，切記田間不可積水，防止雨季來臨或施水量過多而導致根部潰爛。</p>",
         water_sensitive: 3,
-        crop_image: "watermelon.jpg",
+        crop_image: "watermelon2.jpg",
         max_temp: 40,
         min_temp: 15,
         best_temp: "20~25℃",
@@ -310,10 +310,10 @@ module.exports = {
         season_string: "春作,夏作,秋作",
         type: "Vegetables - Cucumber Family",
         total_grow_time: "播種至採收 80~89 天",
-        discription:
+        Description:
           "<p><strong>一、發芽期</strong></p><p>西瓜從播種到第一片真葉顯露，為發芽期。西瓜種子發芽需要適宜的溫度，水分和氧氣。其中最重要的就是溫度，在地溫15--20度時，需要7--13天，溫度越高，發芽越快，溫度低則發芽緩慢。如果遇到不適條件，會引起漚籽，發不出，芽乾等問題，俗語說的好，有錢買籽，沒錢買苗，所以一定要慎重。</p><p><strong>二、幼苗期</strong></p><p>西瓜從第一片真葉顯露到團棵為幼苗期。此時植株展開5--6片真葉，莖的節間很短，植株呈直立狀態，一般需要25--30天。這個時期，葉片正在分化，但生長較慢，而根系生長迅速，所以要進行多次中耕，保持土壤疏鬆。要加蓋地膜，增加土壤溫度，促進根系生長與側根分化，防止發生瓜苗徒長、寒根、漚根燒根等問題。</p><p>幼苗期是花芽的分化期，從第一片真葉顯露，到團棵時，第三雌花的分化已經結束。所以加強苗期管理，可以提高雌花質量，增加雌花密度，降低雌花著生節位。</p><p><strong>三、伸蔓期</strong></p><p>西瓜從團棵到主蔓第二雌花開放為伸蔓期。伸蔓期也稱「孕蕾期」或「甩條發棵期」。一般從團棵到第一雌花開放，約需18天左右，以後每隔3--4天開一朵雌花。伸蔓期節間快速生長，植株從直立狀態變為匍匐狀態，葉片迅速變大。在莖葉生長的同時，根系生長速度逐漸緩慢，伸蔓結束，根系基本建成。</p><p>根據雄花始花期為界，可以分為伸蔓前期和伸蔓後期。前期是蔓葉生長的關鍵時期，所以要集中施肥澆水，促進根系發育和莖葉健壯生長，以積累更多的同化物質，為花器官的正常發育奠定物質基礎。從雄花始花期到主蔓第二雌花開放為伸蔓後期，此時是座果的關鍵時期，所以要適當控制莖葉生長，防止生長過剩而瘋秧，不好坐果。</p><p><strong>四、結果期</strong></p><p>西瓜從第二雌花開放到果實成熟為結果期。在25--30度的溫度下，大約需要28--40天。一般的早熟品種為28--32天，中熟品種為35--40天。這個時期根據果實形態變化和和生長特點，可以分為坐果期，生長期，變瓤期。</p><p>河床砂質地在晴天時，每日需灌足量的水，陰天則隔天一次；而砂壤土應把畦作高，晴天時2~3天灌溉一次，陰雨天則須注意排水，切記田間不可積水，防止雨季來臨或施水量過多而導致根部潰爛。</p>",
         water_sensitive: 3,
-        crop_image: "watermelon.jpg",
+        crop_image: "watermelon3.png",
         max_temp: 40,
         min_temp: 15,
         best_temp: "20~25℃",
@@ -336,10 +336,10 @@ module.exports = {
         type: "Roots and Tubers",
         variety:"台農57號（黃皮黃肉）、台農66號（紅皮紅肉），另外還有台農62、64號（黃皮紅肉）、桃園1號（紅皮橙黃肉）、桃園3號（橙黃皮橙黃肉）、台農73號（紫皮紫肉）等",
         total_grow_time: "四個月後開始塊根的生長、肥大,約5個月可採收",
-        discription:
+        Description:
           "<p>番薯在<a href='http://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A3'>臺灣</a>全年可生長，但以3月至11月之間因氣候得宜而生長迅速，惟<a href='http://zh.wikipedia.org/wiki/%E5%86%AC%E5%AD%A3'>冬季</a>遇上低溫<a href='http://zh.wikipedia.org/wiki/%E5%AF%92%E6%B5%81'>寒流</a>時番薯藤及番薯葉可能凍傷枯萎。種植地點要有良好的排水性，若在戶外菜園種植，可在四周挖溝將多餘水分導走；若是以盆栽方式種植，應維持盆底排水功能正常。</p><p>種植番薯常用<a href='http://zh.wikipedia.org/wiki/%E6%89%A6%E6%8F%92'>扦插</a>法，將長約20公分，末端帶有數片番薯葉的番薯藤，於泡水發根後，以斜插的方式將根部淺埋到土壤裡約五公分深即可。初時澆水勿過量，以免番薯藤腐爛，待根部生長健全後，即可增加澆水量，以促進番薯藤及番薯葉生長，惟土壤勿過於潮濕，以免<a href='http://zh.wikipedia.org/wiki/%E8%9C%97%E7%89%9B'>蝸牛</a>大量繁殖並啃食番薯葉。若要種出番薯食用，則要在番薯藤長出一節節的藤時，把歧出的根鬚拉離土壤，使養分能回送到源頭，而在根部長出碩大的番薯</p><h4>土壤</h4><ul><li>以含有機質高之黏質壤土，弱酸性至中性（pH 6.1~7.7）土壤為佳</li><li>貧瘠之地，只要加點肥料、有機質，即可生長良好</li><li><strong>排水不良，過於粘重或過於砂礫的土地不宜栽植</strong></li></ul><h4>溫度，水</h4><ul><li>甘藷性喜高溫、多濕，台灣南部全年均可種植<ul><li>平均温度 24 ℃、多濕之環境條件下，極適合其地上莖葉之生長與發育</li><li>苗栗以北地區可於 3~4 月進行種植，6~8 月為種植及生育最佳時期</li><li>9 月下旬至次年 2 月北部低溫、日照稍嫌不足，生育緩慢且易有徒長現象發生，不宜種植</li></ul></li><li>生育旺盛時期宜給予充份之灌溉<ul><li>夏季約一週二次，冬季得視東北季風強弱及植株生長強健與否適度調整灌溉次數</li><li>保持土壤濕潤以利不定根發生並促進莖葉生長</li><li>甘藷不宜湛水，過多的灌溉水應盡速排除</li></ul></li></ul><p><a href='https://alanntu111.pixnet.net/blog/post/250225285'>https://alanntu111.pixnet.net/blog/post/250225285</a></p>",
         water_sensitive: 2,
-        crop_image: "sweet potato.jpg",
+        crop_image: "sweet_potato.png",
         max_temp: 35,
         min_temp: 10,
         best_temp: "20~30℃",
@@ -362,10 +362,10 @@ module.exports = {
         season_string: "春,夏,秋作",
         type: "Vegetables - Solanum Family",
         total_grow_time: "100～120",
-        discription:
+        Description:
           "<p>番茄的生長</p><ul><li>番茄種子播種後3~5天發芽， 待長出4片本葉便可定植依氣 候而定，約需28~35天</li><li>番茄定植後約一個月便可開花， 番茄為自交作物並不須要其他 媒介便可授粉結果</li><li>番茄果實達到生理成熟後進入 成熟期一般大果在綠熟期採收， 小果番茄紅熟期採收，而加工番茄則完全成熟採收</li></ul><p>水分</p><p>綠色植物最主要的成分是水分，約佔鮮重 80～95 ﹪。水不只是光合作用的原料，植物體內各種代謝作用多在水溶液中進行。水分同時也是養分吸收和運輸的媒介。番茄全期需水量400~600（水）g/g番茄灌溉可需依據生長期給水，一般於始花期到盛果期最需水，果實開始成熟時要酌量減水。</p><p>大氣中的水蒸氣含量，即濕度的大小也影響植物生長甚鉅。因為濕度會影響蒸散作用。植物的水分蒸散主要來自蒸氣壓差（Vapor pressure deficit, VPD），蒸氣壓差用以描述水分蒸發至周圍空氣的能力。葉片的蒸氣壓差可用以描述葉片相對濕度（通常為100%）與周圍相對濕度之差異。VPD愈大，水分蒸散愈多。太高的VPD值導致葉片失水過度而萎凋。VPD太低，周圍的空氣濕度近乎飽和，葉片難以蒸發水分。因而植物的水分含量不正常，養份無法輸送。蒸氣壓差在1.5〜7.5 g/m3的範圍，蕃茄的蒸散作用維持正常</p><p>二氧化碳濃度會影響光合速率，在密閉溫室裡，白天植物行光合作用後，溫室內的 CO2會降到 100 ppm 以下， 嚴重影響光合作用，此時必須人工供給 CO2，其濃度提高到 1,000ppm，可促進作物生育。在台灣的設施栽培，經常需要通氣，尚無加入 CO2 的必要。<br>但是二氧化碳濃度與光量及溫度有交互關係。例如在高光與高二氧化碳濃度下，溫度不能太低。低溫狀態植物失去平衡，養份的傳輸與同化不足，生產所需的同化量無法供應足夠。</p><p>1. 溫度<br>＊生育適宜溫度範圍為10～33 ℃，土溫18~23 ℃.。<br>&nbsp; &nbsp; 育苗期間白天適宜溫度為20℃~25℃，夜間為10℃~15℃。<br>&nbsp; &nbsp; 開花結果的適宜溫度白天為20℃~30℃，夜間為15℃ ~20℃，在15℃以下不能開花，10℃時生長停止， -1℃時植株受凍而死亡， 35℃以上的高溫，不僅生長停止， &nbsp; &nbsp; 並易衰亡。<br>2.濕度<br>＊番茄屬半耐旱作物。<br>＊土壤相對濕度：幼苗期以65%-75%為宜； 结果期則要求在75％～85%。<br>＊空氣相對濕度：以50％-65%為宜。<br>3.光度<br>＊番茄是喜光作物，光飽和點為7萬勒克斯。<br>&nbsp; &nbsp; 番茄花芽分化屬於中光性植物，不需要特定的光週期。<br>&nbsp; &nbsp; 幼苗期光照不足，影響花芽分化節位和品質；<br>&nbsp; &nbsp; 開花期光照不足，可導致落花落果；結果期光照不足，座果率低，單果重下降，還容易出現空洞果，筋腐病果。<br>4.土壤<br>＊番茄對土壤要求不太嚴格，但對土壤通氣條件要求嚴格，土壤pH6-7為宜。<br>&nbsp; 栽培番茄應選擇土層深厚，土壤富含有機質，排水良好的肥沃壤土。</p>",
         water_sensitive: 2,
-        crop_image: "小果番茄.jfif",
+        crop_image: "Grape_tomato.jfif",
         max_temp: 35,
         min_temp: 10,
         best_temp: "日溫為21-26℃、夜溫15-20℃",
@@ -386,11 +386,11 @@ module.exports = {
         season_string: "",
         type: "Cereals",
         total_grow_time: "一期水稻為110~140天, 二期水稻100至110天",
-        short_discription:"喜高溫多雨氣候,需有充分養分和高日照",
-        discription:
+        short_description:"喜高溫多雨氣候,需有充分養分和高日照",
+        Description:
           "<p></p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "rice.jpeg",
         max_temp: 40,
         min_temp: 20,
         best_temp: "25～30℃",
@@ -411,10 +411,10 @@ module.exports = {
         season_string: "秋作",
         type: "Vegetables - Solanum Family",
         total_grow_time: "110∼120",
-        discription:
+        Description:
           "<p>番茄的生長</p><ul><li>番茄種子播種後3~5天發芽， 待長出4片本葉便可定植依氣 候而定，約需28~35天</li><li>番茄定植後約一個月便可開花， 番茄為自交作物並不須要其他 媒介便可授粉結果</li><li>番茄果實達到生理成熟後進入 成熟期一般大果在綠熟期採收， 小果番茄紅熟期採收，而加工番茄則完全成熟採收</li></ul><p>水分</p><p>綠色植物最主要的成分是水分，約佔鮮重 80～95 ﹪。水不只是光合作用的原料，植物體內各種代謝作用多在水溶液中進行。水分同時也是養分吸收和運輸的媒介。番茄全期需水量400~600（水）g/g番茄灌溉可需依據生長期給水，一般於始花期到盛果期最需水，果實開始成熟時要酌量減水。</p><p>大氣中的水蒸氣含量，即濕度的大小也影響植物生長甚鉅。因為濕度會影響蒸散作用。植物的水分蒸散主要來自蒸氣壓差（Vapor pressure deficit, VPD），蒸氣壓差用以描述水分蒸發至周圍空氣的能力。葉片的蒸氣壓差可用以描述葉片相對濕度（通常為100%）與周圍相對濕度之差異。VPD愈大，水分蒸散愈多。太高的VPD值導致葉片失水過度而萎凋。VPD太低，周圍的空氣濕度近乎飽和，葉片難以蒸發水分。因而植物的水分含量不正常，養份無法輸送。蒸氣壓差在1.5〜7.5 g/m3的範圍，蕃茄的蒸散作用維持正常</p><p>二氧化碳濃度會影響光合速率，在密閉溫室裡，白天植物行光合作用後，溫室內的 CO2會降到 100 ppm 以下， 嚴重影響光合作用，此時必須人工供給 CO2，其濃度提高到 1,000ppm，可促進作物生育。在台灣的設施栽培，經常需要通氣，尚無加入 CO2 的必要。<br>但是二氧化碳濃度與光量及溫度有交互關係。例如在高光與高二氧化碳濃度下，溫度不能太低。低溫狀態植物失去平衡，養份的傳輸與同化不足，生產所需的同化量無法供應足夠。</p><p>1. 溫度<br>＊生育適宜溫度範圍為10～33 ℃，土溫18~23 ℃.。<br>&nbsp; &nbsp; 育苗期間白天適宜溫度為20℃~25℃，夜間為10℃~15℃。<br>&nbsp; &nbsp; 開花結果的適宜溫度白天為20℃~30℃，夜間為15℃ ~20℃，在15℃以下不能開花，10℃時生長停止， -1℃時植株受凍而死亡， 35℃以上的高溫，不僅生長停止， &nbsp; &nbsp; 並易衰亡。<br>2.濕度<br>＊番茄屬半耐旱作物。<br>＊土壤相對濕度：幼苗期以65%-75%為宜； 结果期則要求在75％～85%。<br>＊空氣相對濕度：以50％-65%為宜。<br>3.光度<br>＊番茄是喜光作物，光飽和點為7萬勒克斯。<br>&nbsp; &nbsp; 番茄花芽分化屬於中光性植物，不需要特定的光週期。<br>&nbsp; &nbsp; 幼苗期光照不足，影響花芽分化節位和品質；<br>&nbsp; &nbsp; 開花期光照不足，可導致落花落果；結果期光照不足，座果率低，單果重下降，還容易出現空洞果，筋腐病果。<br>4.土壤<br>＊番茄對土壤要求不太嚴格，但對土壤通氣條件要求嚴格，土壤pH6-7為宜。<br>&nbsp; 栽培番茄應選擇土層深厚，土壤富含有機質，排水良好的肥沃壤土。</p>",
         water_sensitive: 3,
-        crop_image: "番茄.jpeg",
+        crop_image: "Tomato.jpg",
         max_temp: 28,
         min_temp: 15,
         best_temp: "日溫為21∼26℃、夜溫15∼20℃",
@@ -435,7 +435,7 @@ module.exports = {
         season_string: "秋、冬季",
         type: "Roots and Tubers",
         total_grow_time: "110∼130",
-        discription:
+        Description:
           "<p>馬鈴薯喜好冷涼氣候，植株生長最適溫 為21℃ 左右，低於 0℃ 有凍害，27℃ 以上會 限制生長，高過 30℃ 發生高溫障礙。種植適 期為 9 月下旬至翌年 1 月，每分地種植 5000 株，種薯用量視薯塊大小而定，在 90∼120 公 斤。栽培前，需選擇品種純正、大小中等、已 結束休眠而開始萌芽及不帶病毒及其它種傳染 病害 (如青枯病、晚疫病、瘡痂病、細菌性軟 腐病等) 的健康種薯。種植前 2∼3 週自冷藏 庫取出種薯，置於陰涼處，利用間接光線照光育芽。整地種植時，一般採用 120 公分的雙行 畦(畦面約 90 公分)，畦上行距 45 公分，株距 30∼32 公分，作畦採南北走向，以利通風。</p><p>馬鈴薯是喜光作物，生長 期間充分光照，有利光合作用；長期光度不 足，莖葉易徒長，延遲塊莖形成及降低產量。 馬鈴薯為淺根性作物，需常灌溉，生育後期及 結薯初期保持土壤含水量在 60∼80% 為宜， 太濕或積水薯球容易腐爛，一般約在種植 60 天以後宜逐漸減少灌溉水量，採收前 7∼10天 需停止灌水。 基肥於整地前撒布，追肥則於種植後 4 週，施肥於株間或行間，再行培土。馬鈴薯地 上部枯乾時為收穫適期。採收後薯球存放環境 的溫度與溼度非常重要，一般以 15∼20℃， 85% 以上的相對溼度，使薯皮充分療傷 1∼ 2 週。冷藏標準溫度 2∼5℃，相對濕度 85∼ 90%，加工業冷藏溫度宜升高為 7∼10℃。&nbsp;</p><p><br><a href='https://www.lanlix.com.tw/cropgrow/53#:~:text=%E9%A6%AC%E9%88%B4%E8%96%AF%E5%96%9C%E5%A5%BD%E5%86%B7%E6%B6%BC%E6%B0%A3%E5%80%99%EF%BC%8C%E6%A4%8D%E6%A0%AA,%E5%9C%A890%E2%88%BC120%20%E5%85%AC%E6%96%A4%E3%80%82'>https://www.lanlix.com.tw/cropgrow/53#:~:text=%E9%A6%AC%E9%88%B4%E8%96%AF%E5%96%9C%E5%A5%BD%E5%86%B7%E6%B6%BC%E6%B0%A3%E5%80%99%EF%BC%8C%E6%A4%8D%E6%A0%AA,%E5%9C%A890%E2%88%BC120%20%E5%85%AC%E6%96%A4%E3%80%82</a></p>",
         water_sensitive: 2,
         crop_image: "potato.jpg",
@@ -460,10 +460,10 @@ module.exports = {
         season_string: "春作",
         type: "Legumes (Leguminosae)",
         total_grow_time: "110∼125",
-        discription:
+        Description:
           "<p>花生每次的生長週期約一百天，通常於每年的一至三月與六至九月播種，視當年天氣而定。播種後約四十天開花，當花兒凋謝後，即完成授粉動作。花生從果針入土計算，大概需要四十五到六十天左右。<br><br>如果土壤乾旱，果針的出現和莢果的發育都會推遲；土壤水分過多，莢果的發育也會變緩慢。接下來要等待超過兩個月，花生的子房會長成葫蘆形狀的外殼，裡面也就長成花生。</p><p>(一)花生的生育期</p><p>花生從播種到飽果成熟所經歷的天數，稱為花生的生育期。</p><p>按生育期長短，春花生可分為早熟品種(生育期130天以下)、中熟品種(生育期130～160天)、晚熟品種(生育期160天以上)。</p><p><strong>1、發芽出苗期</strong></p><p>從播種到50%的幼苗出土，並展開第一片真葉為發芽出苗期。</p><p>花生清棵技術：花生的兩片子葉不出土或半出土，使著生第一對側枝的子葉節處於表土之下，影響第一對側枝的健康發育，</p><p>需採用清棵處理。當花生苗有2片真葉展開時，及時把埋在土中的兩片子葉清出，可以控制主莖節間的拉長，促進花芽分化。</p><p><strong>2、幼苗期</strong>：從50%種子出苗到50%植株第一朵花開放為幼苗期。<br><br>花生以生根、出葉、分枝等營養生長為主，同時有效發芽大量分化。 花生出苗至始花前，視土壤墒情，鋤2-3遍，鋤地時須防止壅土埋苗和壓枝。及時滅蚜。花生始花前正是蚜蟲第1次為害高峰， 對花芽的形成和早期花開花受精影響極大，必須及早防治，保護前期有效花芽。</p><p><strong>3、開花下針期</strong></p><p>自50%植株開花到50%植株出現雞頭狀幼果為開花下針期，簡稱花針期。</p><p>遇到旱天要及時澆水：如果此期0-30厘米土層含水低於最大持水量的50％，葉色黑綠，開花量開始減少，葉片中午萎蔫日落才能恢復時，應及時溝灌潤澆，解除旱情，促花開放。但切忌大水漫灌。遇旱澆水可使前期有效花增加6％，結實率和飽果率分別提高4.5％和3.5。</p><p><strong>4、結莢期</strong></p><p>從50%植株出現雞頭狀幼果到50%植株出現飽果為結莢期。</p><p>此時技術管理要點：</p><p>4.1、培土迎針。抓住封壟和大批果針入土前的時間，結合鋤最後一遍地，用大鋤深鋤猛拉培壟，或用耘鋤培土，做到溝深，土暄、頂凹、腰胖，創造側枝高節位果針入土結實的條件。</p><p>4.2、控棵保穩長。花生過早封行，田間郁蔽，淨同化率降低，不能實現高產。結莢初期植株生長過旺和有過早封壟現象的高產田，應在始花後40-50天或植株高度在 40厘米左右時及時葉面噴施花生矮豐等控旺。</p><p>4.3、澆好結莢水。此期是花生一生中需水最多的時期，遇旱嚴重影響果針入土結實，特別是結莢兵後期乾旱能引起大幅度減產。因此，若0-30厘米土層含水量低於最大持水量的40％，群體植株葉片翻白傍晚不能恢復時，應及時澆水。這是高產成敗的關鍵，不容忽視。</p><p><strong>5、飽果成熟期</strong></p><p>從50%植株出現飽果到大多數莢果飽滿</p><p>成熟為飽果成熟期，簡稱飽果期。</p><p>原文網址：</p><p><a href='https://kknews.cc/agriculture/8o6my5l.html'>https://kknews.cc/agriculture/8o6my5l.html</a></p>",
         water_sensitive: 1,
-        crop_image: "",
+        crop_image: "Peanut.webp",
         max_temp: 30,
         min_temp: 19,
         best_temp: "白天25∼35℃，晚上20∼30℃",
@@ -479,50 +479,51 @@ module.exports = {
         id: 19,
         common_name: "Pepper",
         bio_name: "Capsicum annuum L.",
-        chinese_name: "番椒",
-        variety:"五彩辣椒(cherry pepper),朝天椒(cone pepper),八房椒,羊角椒(long pepper)",
+        chinese_name: "辣椒",
+        variety:"朝天椒、糯米椒、雞心椒",
         breed: "番椒",
-        other_name: "燈籠椒,甜椒,番椒,海椒,青椒",
-        season_string: "春播",
-        type: "chess type, bell type",
-        total_grow_time: "75~100",
-        discription:
-          "<p></p>",
+        other_name: "",
+        season_string: "春作,秋作",
+        type: "Vegetables - Solanum Family (Solanaceae)",
+        total_grow_time: "約三個月",
+        Description:
+          "<p>辣椒植物的種植與生長需要特定的氣溫範圍，以確保其健康與生產力。在整個生長期，植物需要溫度穩定在攝氏 20-30 度的範圍內。在播種期，以溫度攝氏 26-29 度為最佳，這樣可以確保種子成功發芽。當溫度低於攝氏 20 度時，辣椒的生長將會受到影響，低於攝氏 10 度的溫度可能會導致植物的死亡。然而，當溫度超過攝氏 32 度時，辣椒植物也可能會受到熱量壓力的影響，導致生長緩慢或停止。</p>",
         water_sensitive: 2,
-        crop_image: "",
-        max_temp: 35,
-        min_temp: 15,
-        best_temp: "20-25℃",
-        plant_distance_1: 45,
-        plant_distance_2: 70,
-        ph: "6.5 左右為宜",
-        soil:"排水良好之壤質砂土、砂質壤土或砂質黏壤土",
-        author: "Helen",
+        crop_image: "Pepper.jpg",
+        max_temp: 32,
+        min_temp: 10,
+        best_temp: "25～30℃",
+        plant_distance_1: 30,
+        plant_distance_2: 60,
+        ph: "6. 2~7. 2",
+        soil:"土壤的選擇，辣椒並不苛刻。只要土壤排水良好，富含有機質",
+        author: "https://chilihouse.cc/%E8%BE%A3%E6%A4%92%E7%A8%AE%E6%A4%8D",
         createdAt: "2022-06-15",
         updatedAt: "2022-06-15",
       },{
         id: 20,
-        common_name: "Pepper",
+        common_name: "Bell pepper",
         bio_name: "Capsicum annuum L.",
         chinese_name: "番椒",
         variety:"五彩辣椒(cherry pepper),朝天椒(cone pepper),八房椒,羊角椒(long pepper)",
-        breed: "",
+        breed: "番椒",
         other_name: "燈籠椒,甜椒,番椒,海椒,青椒",
-        season_string: "秋播",
+        season_string: "春、秋作",
         type: "chess type, bell type",
         total_grow_time: "75~100",
-        discription:
-          "<p></p>",
+        short_description:"性喜溫暖乾燥氣候，但比番茄稍能耐高溫。",
+        Description:
+          "<p>甜椒種子發芽適溫在 20 ~ 30 ℃，生育適溫在 25 ℃左右，花芽分化適溫在 27 ~ 28 ℃之間。開花、著花、著果適溫在 21 ~ 27 ℃之間。但溫度低於 15 ℃或高於 32 ℃以上及日夜溫差小時則不易著果。日人崛裕認為要甜椒果實發育良好、收穫量增加之最佳溫度配置為日溫 28 ~ 23 ℃，夜溫 23 ~ 18 ℃、地溫 28 ~ 23 ℃。</p>",
         water_sensitive: 2,
-        crop_image: "",
-        max_temp: 35,
+        crop_image: "Bell_pepper.jpg",
+        max_temp: 32,
         min_temp: 15,
-        best_temp: "20-25℃",
+        best_temp: "21 ~ 27℃",
         plant_distance_1: 45,
-        plant_distance_2: 70,
+        plant_distance_2: 75,
         ph: " 6.5 左右為宜",
         soil:"",
-        author: "Helen",
+        author: "https://www.tdais.gov.tw/ws.php?id=1865",
         createdAt: "2022-06-15",
         updatedAt: "2022-06-15",
       },{
@@ -536,10 +537,10 @@ module.exports = {
         season_string: "春作,秋作",
         type: "Cereals",
         total_grow_time: "生育日數110天以下者，為早熟品種，111～125天為中熟品種，126天以上者為晚熟品種",
-        discription:
+        Description:
           "<p>幼苗期：係萌芽至生長永久根（次生根），種子萌芽後1～5天可長出一片新葉，幼苗3～4葉時遇土壤濕潤便能生出永久根。拔節期：永久根生長至莖稈開始抽長，一般於10葉齡開始。此時期根系生長旺盛、植株最抗旱，故此時應保持土壤通氣性。孕穗期：植株拔節至幼穗分化，一般品種在植株抽高後3～7天開始，此時根、莖、葉生長最旺盛，需水及需肥量激增，應充分灌水及施肥，有助於生殖生長。抽穗期：幼穗分化後20～25天即進入抽穗期，由開始露出頂穗到全部抽出需3～5天，抽出後3～4天小穗即行開花，此時忌陰雨及乾旱。籽粒形成期：籽粒充實順序是由穗頂至基部，由開花至成熟需40～45天。此時期植株不抗旱又不耐水，應於抽穗期前給予適度的水分與養分，同時慎防病蟲害。</p>",
         water_sensitive: 2,
-        crop_image: "小米.jpg",
+        crop_image: "millet.jpg",
         max_temp: 30,
         min_temp: 4,
         best_temp: "25~30℃",
@@ -561,11 +562,11 @@ module.exports = {
         season_string: "春作,秋作",
         type: "Cereals",
         total_grow_time: "秋作生育期約80~90天",
-        short_discription:"耐旱，喜歡溫暖的氣候，不耐低溫",
-        discription:
+        short_description:"耐旱，喜歡溫暖的氣候，不耐低溫",
+        Description:
           "<p>81年育成胡麻”台南1號”，其品種特性如下：春作播種後4～5天發芽，30～35天開花，開花後25～30天摘心，摘心後約35天即達成熟。秋作因初期溫度較高約播種後3～4天即發芽，25～30天開花，開花期間約1個月後即自然收花，再經1個月即達成熟。台南1號春作的生育日數為95～120天，秋作則為85～95天</p>",
         water_sensitive: 2,
-        crop_image: "胡麻.jpg",
+        crop_image: "Sesame.jpg",
         max_temp: 37,
         min_temp: 18,
         best_temp: "24～32℃",
@@ -588,11 +589,11 @@ module.exports = {
         total_grow_time:"300多天",
         type: "Roots and Tubers",
         total_grow_time: "生育日數110天以下者，為早熟品種，111～125天為中熟品種，126天以上者為晚熟品種",
-        short_discription:"耐旱耐貧瘠，惡劣環境下的產量遠勝其他的栽培作物",
-        discription:
+        short_description:"耐旱耐貧瘠，惡劣環境下的產量遠勝其他的栽培作物",
+        Description:
           "<p>年均溫度18℃以上的地區都可栽培，發芽最低溫度為14~16℃，一般在15~18℃時可以種植，溫度高於20℃生正常，在24℃生是良好，在30~35℃時生是特別強烈，至40℃以上時，生育受到影響，在10℃時幾乎不發育，不到10℃時，生育受障礙。如受霜害，薯葉枯萎，如霜害重，莖部也變成乾枯而失去種用價值。根部生是最通溫度是24~28C，開花時的最低溫度20℃，常溫為24~32℃，最高為40℃，在20℃以下時，生殖翩胞酸育不健全，甚至被破壞。原文網址：https://kknews.cc/agriculture/bz5z2o6.html/p>",
         water_sensitive: 1,
-        crop_image: "木薯.jpg",
+        crop_image: "manioc.jpg",
         max_temp: 40,
         min_temp: 16,
         best_temp: "30~35℃",
@@ -605,7 +606,7 @@ module.exports = {
         updatedAt: "2022-06-15",
       },{
         id: 24,
-        common_name: "Cabbage",
+        common_name: "Chinese cabbage",
         bio_name: "Brassica campestris L. ssp. pekinesis",
         chinese_name: "大白菜",
         variety:"",
@@ -614,10 +615,10 @@ module.exports = {
         season_string: "秋冬季",
         type: "Small Vegetables",
         total_grow_time: "50～80天",
-        discription:
+        Description:
           "<p>大白菜算是最近寒冷天氣下的受益作物. 溫度越低長的越好, 連帶的蟲害也變的比較少.台灣之秋冬季非常適合結球白菜之生長,秋季玉米收穫後播種，初冬收穫</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Chinese_cabbage2.webp",
         max_temp: 25,
         min_temp: 20,
         best_temp: "13-23℃",
@@ -630,7 +631,7 @@ module.exports = {
         updatedAt: "2022-06-15",
       },{
         id: 25,
-        common_name: "",
+        common_name: "Chinese cabbage",
         bio_name: "Brassica rapa pekinensis",
         chinese_name: "山東大白菜",
         variety:"",
@@ -639,10 +640,10 @@ module.exports = {
         season_string: "秋冬季",
         type: "Small Vegetables",
         total_grow_time: "早生種(定植40天後可採收), 中生種(定植50天後可採收)",
-        discription:
+        Description:
           "<p>大白菜算是最近寒冷天氣下的受益作物. 溫度越低長的越好, 連帶的蟲害也變的比較少.台灣之秋冬季非常適合結球白菜之生長,秋季玉米收穫後播種，初冬收穫</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Chinese_cabbage.jpg",
         max_temp: 32,
         min_temp: 5,
         best_temp: "20℃～25℃",
@@ -664,11 +665,11 @@ module.exports = {
         season_string: "全年皆可",
         type: "Small Vegetables",
         total_grow_time: "秋季播種45～50天，夏季播種35～40天就可收成",
-        short_discription:"",
-        discription:
+        short_description:"",
+        Description:
           "<p></p>",
         water_sensitive: 3,
-        crop_image: "青江菜.jpg",
+        crop_image: "Bok_Coy2.jpg",
         max_temp: 3,
         min_temp: 35,
         best_temp: "18℃~20℃",
@@ -690,11 +691,11 @@ module.exports = {
         season_string: "四季均可種植",
         type: "Roots and Tubers",
         total_grow_time: "8~9 個月",
-        short_discription:"生長期長、不易照料",
-        discription:
+        short_description:"生長期長、不易照料",
+        Description:
           "<p></p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Taro.jpg",
         max_temp: 35,
         min_temp: 15,
         best_temp: "25-35℃",
@@ -716,10 +717,10 @@ module.exports = {
         season_string: "秋冬",
         type: "Small Vegetables",
         total_grow_time: "5-6個月",
-        discription:
+        Description:
           "<p>喜濕，要求有較高的土壤濕度，但根系又怕澇，高溫高濕則極易引起根系死亡,耐寒性強，適合秋冬栽培。</p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "Leeks.jpg",
         max_temp: 25,
         min_temp: 5,
         best_temp: "12°C~22°C",
@@ -741,10 +742,10 @@ module.exports = {
         season_string: "全年",
         type: "Small Vegetables",
         total_grow_time: "40",
-        discription:
+        Description:
           "<p>日蔥和粉蔥口感、特色幾無差異，最大的差別在於蔥白，日蔥的蔥白是蔥類中最長的，大約可到20公分，粉蔥則略短。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "scallions.jpg",
         max_temp: 30,
         min_temp: 10,
         best_temp: "16~21°C",
@@ -766,10 +767,10 @@ module.exports = {
         season_string: "夏至秋季",
         type: "Small Vegetables",
         total_grow_time: "種植120天後",
-        discription:
+        Description:
           "<p>北蔥全年均可種植，但夏後為佳，以排水良好的肥沃黏質土壤為佳，忌積水，不耐乾燥環境。葉身細長，葉肉薄，分蘖少。北蔥對低溫較敏感，稍低溫即抽苔。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Scallions2.jpg",
         max_temp: 30,
         min_temp: 10,
         best_temp: "23~30°C",
@@ -791,10 +792,10 @@ module.exports = {
         season_string: "",
         type: "Small Vegetables",
         total_grow_time: "75天",
-        discription:
+        Description:
           "<p>粉蔥跟三星蔥特徵很相近，主要就是植株比較嬌小，很適合盆栽種植，也具備三星蔥蔥白長，水分多，而且吃起來不會嗆辣的特性，也是很受歡迎的品種。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Scallions3.jpg",
         max_temp: 30,
         min_temp: 10,
         best_temp: "23~30°C",
@@ -816,10 +817,10 @@ module.exports = {
         season_string: "",
         type: "Small Vegetables",
         total_grow_time: "3個月",
-        discription:
+        Description:
           "<p>產期為農曆年前後，是植株最小的蔥類，特徵是蔥白接近根處的鱗莖肥大，非常容易辨認，所以又被稱為大頭蔥。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Shallot.jpg",
         max_temp: 26,
         min_temp: 3,
         best_temp: "15∼22℃",
@@ -840,11 +841,11 @@ module.exports = {
         other_name: "紅皮菜、紅茄仔、茄仔、落蘇、昆侖紫瓜",
         season_string: "",
         type: "Vegetables - Solanum Family (Solanaceae)",
-        total_grow_time: "",
-        discription:
+        total_grow_time:  "5個月",
+        Description:
           "<p>.茄園約7天灌溉一次，以畦面保持濕潤狀態為原則，過於乾燥會降低果實品質，使果皮過硬，過於潮濕易使根部腐爛致死，又灌水應避免淹過畦頂，造成茄株死亡及青枯病、疫病之蔓延。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Egg_Plant.jpg",
         max_temp:35,
         min_temp: 17,
         best_temp: "22∼30℃",
@@ -861,15 +862,15 @@ module.exports = {
         bio_name: "Solanum melongena Linn.",
         chinese_name: "麻薯長茄",
         variety:"長茄",
-        breed: "茄子",
+        breed: "茄子-長茄",
         other_name: "",
         season_string: "",
         type: "Vegetables - Solanum Family (Solanaceae)",
         total_grow_time: "80",
-        discription:
+        Description:
           "<p>茄園約7天灌溉一次，以畦面保持濕潤狀態為原則，過於乾燥會降低果實品質，使果皮過硬，過於潮濕易使根部腐爛致死，又灌水應避免淹過畦頂，造成茄株死亡及青枯病、疫病之蔓延。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "EggPlant2.png",
         max_temp:35,
         min_temp: 17,
         best_temp: "22∼30℃",
@@ -886,15 +887,15 @@ module.exports = {
         bio_name: "Solanum melongena Linn.",
         chinese_name: "茄子-圓茄",
         variety:"北京圓茄、濟南大紅袍、河南造青茄、山西短黑把、天津大苠茄",
-        breed: "",
+        breed: "茄子",
         other_name: "紅皮菜、紅茄仔、茄仔、落蘇、昆侖紫瓜",
         season_string: "",
         type: "Vegetables - Solanum Family (Solanaceae)",
         total_grow_time: "",
-        discription:
+        Description:
           "<p></p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "EggPlant3.jpg",
         max_temp:35,
         min_temp: 17,
         best_temp: "22∼30℃",
@@ -916,10 +917,10 @@ module.exports = {
         season_string: "",
         type: "Vegetables - Solanum Family (Solanaceae)",
         total_grow_time: "",
-        discription:
+        Description:
           "<p></p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "eggplant4.jpg",
         max_temp:35,
         min_temp: 17,
         best_temp: "22∼30℃",
@@ -941,10 +942,10 @@ module.exports = {
         season_string: "",
         type: "Small Vegetables",
         total_grow_time: "",
-        discription:
+        Description:
           "<p></p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "Celery.jpg",
         max_temp: 30,
         min_temp: 15,
         best_temp: "22∼30℃",
@@ -966,10 +967,10 @@ module.exports = {
         season_string: "",
         type: "Small Vegetables",
         total_grow_time: "",
-        discription:
+        Description:
           "<p></p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "Celery2.jpg",
         max_temp: 30,
         min_temp: 15,
         best_temp: "22∼30℃",
@@ -991,10 +992,10 @@ module.exports = {
         season_string: "",
         type: "Small Vegetables",
         total_grow_time: "",
-        discription:
+        Description:
           "<p></p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "Celery3.jpg",
         max_temp: 30,
         min_temp: 15,
         best_temp: "22∼30℃",
@@ -1016,10 +1017,10 @@ module.exports = {
         season_string: "秋冬季",
         type: "Small Vegetables",
         total_grow_time: "3-4個月",
-        discription:
+        Description:
           "<p></p>",
         water_sensitive: 3,
-        crop_image: "球莖甘藍.jfif",
+        crop_image: "Kohlrabi.jfif",
         max_temp: 35,
         min_temp: 10,
         best_temp: "20-26℃",
@@ -1041,11 +1042,11 @@ module.exports = {
         season_string: "春季",
         type: "Lugumes (Leguminosae)",
         total_grow_time: "高溫期約45~50天始花，開花後12~14天即可採收",
-        short_discription:"不耐高溫和霜凍",
-        discription:
+        short_description:"不耐高溫和霜凍",
+        Description:
           "<p>灌水宜於早上進行，以免土溫變化太大。菜豆種子發芽的適溫為20-30℃；在40℃以上的高溫和10℃以下的低溫，種子不易發芽。幼苗生長適宜氣溫為18-25℃。花芽分化的適宜氣溫為20-25℃，過高或過低溫度易出現發育不完全的花蕾、落花。</p>",
         water_sensitive: 3,
-        crop_image: "豇豆.jfif",
+        crop_image: "Black_eyed_pea.jfif",
         max_temp: 40,
         min_temp: 10,
         best_temp: "18-25℃",
@@ -1067,11 +1068,11 @@ module.exports = {
         season_string: "秋冬作物",
         type: "Cereals",
         total_grow_time: "早熟種一般為60-70天，中熟種70-80天，晚熟種80天以上",
-        short_discription:"耐寒性雖比較強，但因莖葉脆弱，不抗風霜",
-        discription:
+        short_description:"耐寒性雖比較強，但因莖葉脆弱，不抗風霜",
+        Description:
           "<p>旱田作物，種子發芽雖要適當水分，但不必太多，生育期中如土壤過於乾燥時應行1 ~ 2 次灌溉，灌溉時以田面濕潤後應即排水，若排水不良土地，應每隔5 ~ 6 公尺開1 條排水溝，以利排水。</p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "Buckwheat.jpg",
         max_temp: 30,
         min_temp: 10,
         best_temp: "15－20℃",
@@ -1093,7 +1094,7 @@ module.exports = {
         season_string: "一年四季均可生產",
         type: "Vegetables - Cucumber Family (Cucurbitaceae)",
         total_grow_time: "播種後大約70～80天，或定植後約50天開始採收",
-        discription:
+        Description:
           "<p>種子發芽適溫為30～35℃。幼苗生長適溫為20～25℃，30℃以上和15℃以下的溫度對苦瓜的生長結果都不利。開花結果以25～30℃且日照充足之結果率高，發育亦較迅速。</p>",
         water_sensitive: 3,
         crop_image: "Bitter_melon.jpg",
@@ -1118,10 +1119,10 @@ module.exports = {
         season_string: "秋季",
         type: "",
         total_grow_time: "50~60天",
-        discription:
+        Description:
           "<p>喜溫暖 不耐高溫及低溫,較耐旱，怕澇，所以種植時澆水不宜過多，相反雨季時要及時排水。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "String_Bean.jpg",
         max_temp: 30,
         min_temp: 10,
         best_temp: "15~20℃",
@@ -1143,7 +1144,7 @@ module.exports = {
         season_string: "秋季",
         type: "Small Vegetables",
         total_grow_time: "150～180天",
-        discription:
+        Description:
           "<p>在生長初期（播種後40天內）約5～7天灌水一次，生長中期（播種後40～80天）約10～15天灌水一次，生長盛期至蒜球肥大期（播植後80～140天）約隔20天左右灌溉一次，至成熟期應停止灌水。收穫期應使土壤乾燥，以免影響蒜球品質。</p>",
         water_sensitive: 3,
         crop_image: "garlic.jpg",
@@ -1168,10 +1169,10 @@ module.exports = {
         season_string: "秋季",
         type: "Small Vegetables",
         total_grow_time: "80天至100天",
-        discription:
+        Description:
           "<p>在生長初期（播種後40天內）約5～7天灌水一次，生長中期（播種後40～80天）約10～15天灌水一次，生長盛期至蒜球肥大期（播植後80～140天）約隔20天左右灌溉一次，至成熟期應停止灌水。收穫期應使土壤乾燥，以免影響蒜球品質。</p>",
         water_sensitive: 3,
-        crop_image: "青蒜.jpg",
+        crop_image: "green_garlic.jpg",
         max_temp: 25,
         min_temp: 15,
         best_temp: "15∼20℃",
@@ -1193,11 +1194,11 @@ module.exports = {
         season_string: "秋季",
         type: "Small Vegetables",
         total_grow_time: "100-120天",
-        short_discription:"喜冷涼的氣候",
-        discription:
+        short_description:"喜冷涼的氣候",
+        Description:
           "<p>種子發芽適溫以15～25℃最佳，發芽日數約7～10天；35℃以上的高溫則發芽困難，在低溫11℃以下延遲發芽日數約15～20天。胡蘿蔔的生育適溫為16～21℃，而直根肥大的良好條件以日溫18～23℃、夜溫13～18℃及地溫18℃左右時較佳。至於直根著色的適溫為16～20℃，溫度若低於12℃時，則會影響直根著色。溫度若超過25℃時，亦會造成直根生長不佳，表皮容易粗糙；28℃以上時，則葉片會停止生長，病害較易發生。植株若持續生長於10℃以下溫度時，極易發生花芽分化。</p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "Carrot.png",
         max_temp: 28,
         min_temp: 10,
         best_temp: "18~23℃",
@@ -1219,11 +1220,11 @@ module.exports = {
         season_string: "秋冬季栽培",
         type: "Small Vegetables",
         total_grow_time: "約45天可採收。",
-        short_discription:"不耐陰",
-        discription:
+        short_description:"不耐陰",
+        Description:
           "<p>種子發芽和幼苗生長適溫為25～30℃，20℃以下時生長緩慢，葉叢生長和菜苔形成適溫為15～25℃，喜較大的晝夜溫差。30℃以上的高溫對菜苔發育不利，15℃以下時生長緩慢，不同熟性的品種其耐熱性及花芽分化對溫度的要求有差別。早中熟品種較耐熱，在27～28℃的較高溫度下花芽能迅速分化，降低溫度對花芽分化沒有明顯促進作用。</p>",
         water_sensitive: 3,
-        crop_image: "",
+        crop_image: "Chinese_kale2.jpg",
         max_temp: 30,
         min_temp: 15,
         best_temp: "18~32℃",
@@ -1245,8 +1246,8 @@ module.exports = {
         season_string: "春作,秋作",
         type: "Small Vegetables",
         total_grow_time: "3個月以上",
-        short_discription:"喜暖熱氣候，不耐寒冷",
-        discription:
+        short_description:"喜暖熱氣候，不耐寒冷",
+        Description:
           "<p></p>",
         water_sensitive: 3,
         crop_image: "Okra.jpg",
@@ -1272,10 +1273,10 @@ module.exports = {
         season_string: "秋播",
         type: "Vegetables - Cucumber Family (Cucurbitaceae)",
         total_grow_time: "2個月",
-        discription:
+        Description:
           "<p>生長習性1、光照：絲瓜為短日照作物，喜較強Sunny，而且較耐弱光。在幼苗期，以短日照大溫差處理之，利於雌花芽分化，可提早結果和豐產。整個生育期當中較短的日照、較高的溫度、有利於莖葉生長髮育，能維持營養生長健壯，有利於開花座果、幼瓜發育和產量的提高。2、溫度：絲瓜屬喜溫、耐熱性作物，絲瓜生長髮育的適宜溫度為20-30℃，絲瓜種子發芽的適宜溫度為28-30℃，30-35℃時發芽迅速。3、水分：絲瓜喜溼、怕乾旱，土壤溼度較高、含水量在70%以上時生長良好，低於50%時生長緩慢，空氣溼度不宜小於60%。75%-85%時，生長速度快、結瓜多，短時間內空氣溼度達到飽和時，仍可正常地生長髮育。4、土壤：絲瓜是適應性較強、對土壤要求不嚴格的蔬菜作物，在各類土壤中，都能栽培。但是為獲取高額產量，應選擇土層厚、有機質含量高、透氣性良好、保水保肥能力強的壤土、砂壤土為好。</p>",
         water_sensitive: 3,
-        crop_image: "絲瓜.jpg",
+        crop_image: "Vegetable_sponge.jpg",
         max_temp: 40,
         min_temp: 15,
         best_temp: "28~35",
@@ -1298,7 +1299,7 @@ module.exports = {
         season_string: "春作,秋作",
         type: "Vegetables - Cucumber Family (Cucurbitaceae)",
         total_grow_time: "定植後約25～40天後開始雌花，雌花授粉後約7～9天，當果實的稜角溝槽呈現飽滿時(橫徑約6 cm)，即可採收。",
-        discription:
+        Description:
           "<p>生長習性1、光照：絲瓜為短日照作物，喜較強Sunny，而且較耐弱光。在幼苗期，以短日照大溫差處理之，利於雌花芽分化，可提早結果和豐產。整個生育期當中較短的日照、較高的溫度、有利於莖葉生長髮育，能維持營養生長健壯，有利於開花座果、幼瓜發育和產量的提高。2、溫度：絲瓜屬喜溫、耐熱性作物，絲瓜生長髮育的適宜溫度為20-30℃，絲瓜種子發芽的適宜溫度為28-30℃，30-35℃時發芽迅速。3、水分：絲瓜喜溼、怕乾旱，土壤溼度較高、含水量在70%以上時生長良好，低於50%時生長緩慢，空氣溼度不宜小於60%。75%-85%時，生長速度快、結瓜多，短時間內空氣溼度達到飽和時，仍可正常地生長髮育。4、土壤：絲瓜是適應性較強、對土壤要求不嚴格的蔬菜作物，在各類土壤中，都能栽培。但是為獲取高額產量，應選擇土層厚、有機質含量高、透氣性良好、保水保肥能力強的壤土、砂壤土為好。</p>",
         water_sensitive: 3,
         crop_image: "Chinese_okra.jpg",
@@ -1324,8 +1325,8 @@ module.exports = {
         season_string: "夏作",
         type: "Small Vegetables",
         total_grow_time: "夏天需35天，冬天需45~50天",
-        short_discription:"喜高溫、耐熱、耐旱性強",
-        discription:
+        short_description:"喜高溫、耐熱、耐旱性強",
+        Description:
           "<p></p>",
         water_sensitive: 1,
         crop_image: "ceylon_spinach.jpg",
@@ -1350,8 +1351,8 @@ module.exports = {
         season_string: "秋,冬",
         type: "Vegetables - Cucumber Family (Cucurbitaceae)",
         total_grow_time: "播種到採收35～45天",
-        short_discription:"土壤必須是耐肥力很強,不耐澇,消耗水分也多",
-        discription:
+        short_description:"土壤必須是耐肥力很強,不耐澇,消耗水分也多",
+        Description:
           "<p>節瓜適於較高溫度，在20℃至30℃時蔓葉生長迅速，開花結果較早；15℃以下則生長慢，發育也慢。節瓜對溫度的要求，在各個生長時期有所不同。在種子發芽期，在30℃左右，發芽快；抽蔓期也以20℃左右爲宜；開花結果時期適於較高溫度，在20℃至30℃之間爲宜，在30℃左右也能正常結果，20℃以下則果實發育緩慢，還需要有一定的晝夜溫差。</p>",
         water_sensitive: 3,
         crop_image: "Zucchini.jpg",
@@ -1367,7 +1368,7 @@ module.exports = {
         updatedAt: "2022-06-15",
       },{
         id: 54,
-        common_name: "",
+        common_name: "Bok choy",
         bio_name: "Brassica chinensis Linn",
         chinese_name: "小白菜",
         variety:"「小白菜」與「土白菜」",
@@ -1376,11 +1377,11 @@ module.exports = {
         season_string: "全年",
         type: "Small Vegetables",
         total_grow_time: "約30天至45天後可採收。",
-        short_discription:"喜凉蔬菜，耐雨淋，但根部不耐浸水，可全日照",
-        discription:
+        short_description:"喜凉蔬菜，耐雨淋，但根部不耐浸水，可全日照",
+        Description:
           "<p></p>",
         water_sensitive: 3,
-        crop_image: "小白菜.jpg",
+        crop_image: "bok_choy.jpg",
         max_temp: 30,
         min_temp: 2,
         best_temp: "20∼25℃",
@@ -1402,8 +1403,8 @@ module.exports = {
         season_string: "秋冬",
         type: "Vegetables - Cucumber Family (Cucurbitaceae)",
         total_grow_time: "三個月以上",
-        short_discription:"喜溫暖乾燥氣候",
-        discription:
+        short_description:"喜溫暖乾燥氣候",
+        Description:
           "<p></p>",
         water_sensitive: 2,
         crop_image: "crookneck_pumpkin.jpg",
@@ -1428,8 +1429,8 @@ module.exports = {
         season_string: "",
         type: "Vegetables - Cucumber Family (Cucurbitaceae)",
         total_grow_time: "播種至採收約90~120天，結果至採收約45天",
-        short_discription:"喜冷涼氣候,耐熱性較低",
-        discription:
+        short_description:"喜冷涼氣候,耐熱性較低",
+        Description:
           "<p></p>",
         water_sensitive: 2,
         crop_image: "Pumkin2.jpg",
@@ -1454,11 +1455,11 @@ module.exports = {
         season_string: "秋冬播種",
         type: "Legumes (Leguminosae)",
         total_grow_time: "30 ～ 40 天可行第一次採收，約隔 15 天之後可行第二次採收，以後每隔 10 天左右可陸續採收 1 次。",
-        short_discription:"喜冷涼乾燥之氣候",
-        discription:
+        short_description:"喜冷涼乾燥之氣候",
+        Description:
           "<p>臺灣豌豆之栽培方式主要有二種：一為稻田不整地栽培，即在秋冬季二期水稻收割後，不行整地，直接播種於水稻殘株間，並讓豆蔓匍伏於地上。依豌豆健康管理生產栽培技術則建議直立式栽培為宜，因直立式栽培較利於植株通風及光照，直立支架栽培其行距為 120 公分，或 75-90 公分 （立交叉支架時）為宜。</p>",
         water_sensitive: 2,
-        crop_image: "",
+        crop_image: "Pea.jpg",
         max_temp: 25,
         min_temp: -4,
         best_temp: "10-23°C",
@@ -1480,8 +1481,8 @@ module.exports = {
         season_string: "秋冬",
         type: "Small Vegetables",
         total_grow_time: "30~40天即可採收",
-        short_discription:"喜歡冷涼濕潤的氣候條件,發芽前不可斷水，要注意每日澆水。",
-        discription:
+        short_description:"喜歡冷涼濕潤的氣候條件,發芽前不可斷水，要注意每日澆水。",
+        Description:
           "<p></p>",
         water_sensitive: 3,
         crop_image: "",
@@ -1506,8 +1507,8 @@ module.exports = {
         season_string: "早生品種可於7月至9月間播種育苗，中生品種約在9月至10月間播種，晚生品種則約在10月至12月間播種",
         type: "Small Vegetables",
         total_grow_time: "早生種50～60天、中生種70~90天、晚生種100～120天。",
-        short_discription:"喜濕潤，不耐旱、不耐澇。",
-        discription:
+        short_description:"喜濕潤，不耐旱、不耐澇。",
+        Description:
           "<p></p>",
         water_sensitive: 3,
         crop_image: "花椰菜.jpg",
@@ -1532,7 +1533,7 @@ module.exports = {
         season_string: "秋作",
         type: "Oil Crops",
         total_grow_time: "生育期約為94～117天",
-        discription:
+        Description:
           "<p>可分為五個生育期，從播種至發芽為8～11天，發芽至花蕾出現為33～35天，花蕾出現至始花期為17～27天，第一朵花開花至最後一朵花開花為6～8天，最後一朵花至成熟期為30～36天，合計全生育期約為94～117天(謝等1970，Robinson et al.1971)，至最後一朵花開花期約為64～81天</p>",
         water_sensitive: 3,
         crop_image: "",
@@ -1557,7 +1558,7 @@ module.exports = {
         season_string: "",
         type: "",
         total_grow_time: "",
-        discription:
+        Description:
           "<p></p>",
         water_sensitive: 3,
         crop_image: "",

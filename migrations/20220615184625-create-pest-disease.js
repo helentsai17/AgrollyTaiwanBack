@@ -22,9 +22,13 @@ module.exports = {
         type: DataTypes.STRING,
       },
       feature:{
+        //特徵
         type:DataTypes.STRING
       },
-      discription: {
+      Description: {
+        type: DataTypes.TEXT
+      },
+      solution:{
         type: DataTypes.TEXT
       },
       createdAt: {
