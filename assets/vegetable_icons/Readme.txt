@@ -1,1 +1,0 @@
-This subfolder contains icons of vegetables.

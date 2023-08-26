@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class PestDisease extends Model {
     /**
@@ -10,33 +8,44 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.CropPest, { foreignKey: 'pestId' , as: 'croppest'})
+      this.hasMany(models.CropPest, { foreignKey: "pestId", as: "croppest" });
     }
-
   }
-  PestDisease.init({
-    pic_path: {
-      type:DataTypes.STRING
+  PestDisease.init(
+    {
+      pic_path: {
+        type: DataTypes.STRING,
+      },
+      name: {
+        type: DataTypes.STRING,
+      },
+      name_en: {
+        type: DataTypes.STRING,
+      },
+      type: {
+        type: DataTypes.STRING,
+      },
+      feature: {
+        type: DataTypes.TEXT,
+      },
+      affect:{
+        type: DataTypes.TEXT,
+      },
+      description: {
+        type: DataTypes.TEXT,
+      },
+      solution: {
+        type: DataTypes.TEXT,
+      },
+      source:{
+        type: DataTypes.STRING,
+      },
     },
-    name: {
-      type:DataTypes.STRING
-    },
-    name_en: {
-      type:DataTypes.STRING
-    },
-    type: {
-      type:DataTypes.STRING
-    },
-    feature:{
-      type:DataTypes.STRING
-    },
-    Description: {
-      type:DataTypes.TEXT
+    {
+      sequelize,
+      tableName: "pestdiseases",
+      modelName: "PestDisease",
     }
-  }, {
-    sequelize,
-    tableName:'pestdiseases',
-    modelName: 'PestDisease',
-  });
+  );
   return PestDisease;
 };

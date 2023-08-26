@@ -17,6 +17,22 @@ router.post('/add', async (req, res) => {
 
 })
 
+router.get('/:cropid', async(req, res) =>{
+    const cropId = req.params.cropid
+
+    try {
+        const fertilize = await Fertilize.findAll({
+          where: { cropId: cropId}, 
+          order: [['stage', 'ASC']]
+        });
+    
+        return res.json(fertilize);
+      } catch (err) {
+        return res.status(500).json({ error: "error from " + err.message });
+      }
+
+})
+
 router.put('/edit/:id', async(req, res) =>{
     const FertilizeId = req.params.id
     const { stage, content  } = req.body

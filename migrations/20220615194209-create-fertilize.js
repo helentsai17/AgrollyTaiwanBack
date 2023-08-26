@@ -12,8 +12,8 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull:false
       },
-      pic_path: {
-        type: DataTypes.STRING
+      day: {
+        type: DataTypes.INTEGER
       },
       stage: {
         type: DataTypes.INTEGER

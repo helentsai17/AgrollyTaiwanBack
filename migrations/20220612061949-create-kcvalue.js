@@ -48,7 +48,7 @@ module.exports = {
       version:{
         type:DataTypes.STRING 
       },
-      discription:{
+      description:{
         type:DataTypes.TEXT
       },
       ref:{

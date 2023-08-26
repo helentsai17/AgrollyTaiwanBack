@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
     harvest_min_temp: {
       type:DataTypes.INTEGER,
     },
-    discription:{
+    description:{
       type:DataTypes.TEXT
     }
   }, {

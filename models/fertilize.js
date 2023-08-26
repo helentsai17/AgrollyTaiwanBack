@@ -18,8 +18,9 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER,
       allowNull:false
     },
-    pic_path: {
-      type:DataTypes.STRING
+    day: {
+      //第幾天
+      type:DataTypes.INTEGER
     },
     stage:{
       type:DataTypes.INTEGER

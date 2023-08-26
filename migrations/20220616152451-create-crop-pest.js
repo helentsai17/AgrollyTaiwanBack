@@ -16,6 +16,9 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull:false
       },
+      comment:{
+        type: DataTypes.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE

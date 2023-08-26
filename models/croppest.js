@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     pestId: {
       type:DataTypes.INTEGER
+    },
+    comment:{
+      type: DataTypes.TEXT
     }
   }, {
     sequelize,

@@ -178,7 +178,8 @@ router.post('/register', (req, res) => {
         //see if the user is already created, if not then User.create
         if (!user) {
             bcrypt.hash(password, 10, (err, hash) => {
-                password = hash
+                console.log(hash)
+                userData.password = hash
                 User.create(userData)
                     .then(user => {
                         let token = jwt.sign(userData, process.env.SECRET_KEY, {
@@ -265,9 +266,7 @@ router.post('/login', (req, res) => {
 
             if(user.verify === false){
                 res.status(400).json({ error: 'please verify your email frist' })
-            }
-
-            if (bcrypt.compareSync(req.body.password, user.password)) {
+            }else if (bcrypt.compareSync(req.body.password, user.password)) {
                 let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
                     expiresIn: '2d'
                 })

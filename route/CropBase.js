@@ -111,7 +111,15 @@ router.put('/edit/:cropId', async (req, res) => {
 //get crops list
 router.get('/list', async (req, res) => {
     try {
-        const crops = await Cropbase.findAll()
+        const crops = await Cropbase.findAll({
+            include: [
+                {
+                    model: Seasonplant,
+                    as: 'seasonplant',
+
+                },
+            ]
+        })
         return res.json(crops)
     } catch (err) {
         console.log(err)
@@ -121,19 +129,18 @@ router.get('/list', async (req, res) => {
 
 router.get('/search', async (req, res) => {
     // ?type=tom
-    let type = req.query.type == null ? "" : req.query.type
-    let water_sensitive = req.query.water_sensitive
-    let season = req.query.season
-    var month = req.query.month
+    var type = req.query.type == '' ? "" : req.query.type
+    var water_sensitive = (req.query.water_sensitive == null || req.query.water_sensitive == NaN) ? 0 : req.query.water_sensitive
+    var season = req.query.season == '' ? '' :req.query.season
+
+    console.log("type: "+ type + " water: " + water_sensitive + " season " + season)
 
     try {
         const crops = await Cropbase.findAll({
             where: {
-                type: type == undefined ? { [Op.ne]: 'undefined' } : { [Op.like]: `%${type}%` },
-                water_sensitive: water_sensitive == undefined ? { [Op.ne]: 0 } : { [Op.eq]: parseInt(water_sensitive) },
-                season_string: season == undefined ? { [Op.ne]: 'undefined' } : {[Op.or]:{ [Op.like]: `%${season}%`}},
-                reco_start: month == undefined ? { [Op.ne]: -1 } : { [Op.gte]: parseFloat(month) },
-                reco_end: month == undefined ? { [Op.ne]: -1 } : { [Op.lte]: parseFloat(month) + 1 }
+                type: type == "" ? { [Op.ne]: 'undefined' } : { [Op.like]: `%${type}%` },
+                water_sensitive: (water_sensitive == 0) ? { [Op.ne]: 0 } : { [Op.eq]: parseInt(water_sensitive) },
+                season_string: ((season == "")) ? { [Op.ne]: 'undefined' } : {[Op.or]:{ [Op.like]: `%${season}%`}},
             }
         })
 
@@ -185,17 +192,17 @@ router.get('/detailinfo/:id', async (req, res) => {
                 {
                     model: Fertilize,
                     as: 'fertilize',
-
+      
                 },
                 {
                     model: CropPest,
                     as: 'croppest',
-                    attributes: ['id'],
+                    attributes: ['id','comment'],
                     include: [
                         {
                             model: PestDisease,
                             as: 'pestdisease',
-                            attributes: ['pic_path', 'name', 'name_en', 'type', 'discription'],
+                            attributes: ['pic_path', 'name', 'name_en', 'type', 'description'],
                         }
 
                     ]
@@ -205,13 +212,15 @@ router.get('/detailinfo/:id', async (req, res) => {
                     as: 'media',
 
                 },
+                
 
-            ]
+            ],
+            order: [[{ model: Fertilize, as: 'fertilize' }, 'stage', 'ASC']]
         })
 
         return res.json(cropAllInfo)
     } catch (err) {
-        console.log(err)
+        console.log( "fix this "+ err)
         return res.status(500).json({ error: 'error came from crop all detail' })
     }
 })
@@ -227,13 +236,13 @@ router.get('/croppest/:cropId', async (req, res) => {
                 {
                     model: CropPest,
                     as: 'croppest',
-                    attributes: ['id'],
+                    attributes: ['id','comment'],
                     include: [
                         {
                             model: PestDisease,
                             as: 'pestdisease',
                             attributes: ['pic_path', 'name', 'name_en', 'type', 'discription'],
-                        }
+                        },comment
 
                     ]
                 },
@@ -287,11 +296,26 @@ router.get('/like/:cropId', async (req, res, next) => {
 
 // create relationship: pest and cropbase lookup 
 router.post('/croppest', async (req, res) => {
-    const { cropId, pestId } = req.body
+    const { cropId, pestId, comment } = req.body
 
     try {
-        const post = await CropPest.create({ cropId, pestId })
+        if(!req.body.cropId){
+            res.status(400)
+            res.json({
+              error:'crop id can not be null'
+            })
+        }
+
+        if(!req.body.pestId){
+            res.status(400)
+            res.json({
+              error:'pest Id can not be null'
+            })
+        }
+
+        const post = await CropPest.create({ cropId, pestId, comment })
         return res.json(post)
+
     } catch (err) {
         console.log(err)
     }
