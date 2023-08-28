@@ -21,7 +21,7 @@ module.exports = {
         allowNull: false
       },
       user_image: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
       country: {
         type: DataTypes.STRING,

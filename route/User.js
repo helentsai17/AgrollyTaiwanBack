@@ -27,7 +27,7 @@ const frontendUrl = 'https://localhost:3000'
 router.post('/google-login', async (req, res) => {
 
     const token = req.body.token;
-    // console.log(token);
+    console.log(token);
     const ticket = await client.verifyIdToken({
         idToken: token,
         audience: process.env.GOOGLE_CLIENT_ID
