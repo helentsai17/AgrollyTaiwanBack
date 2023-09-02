@@ -21,7 +21,7 @@ const multer = require('multer')
 const upload = multer({ dest: 'useruploads/' })
 const { uploadFile, getFileStream } = require('../s3')
 
-const frontendUrl = 'https://localhost:3000'
+const frontendUrl = process.env.FRONTENDURL
 
 //third party login
 router.post('/google-login', async (req, res) => {
@@ -187,13 +187,14 @@ router.post('/register', (req, res) => {
                         })
   
                         try{
-                            sendEmail({ from:'agrollytaiwan@gmail.com',
+                            sendEmail({ from:'agrollytaiwan@outlook.com',
                             to: email, 
                             subject: 'Eamil verify - Agrolly Taiwan',
                             text:`
                                 Thanks for signing up! To verify your email, click here:
                                 ${frontendUrl}/user/verify-email/${verificationString}
                             `})
+                            console.log("email send successful")
                             res.status(200).json({ loggedIn: true, token: token })
                         }catch(e){
                             console.log(e);
@@ -208,7 +209,7 @@ router.post('/register', (req, res) => {
                     })
             })
         } else {
-            res.status(409).json({ error: 'your email already register' })
+            res.status(409).json({ error: 'your email already register, please try forget passworld' })
         }
     })
         .catch(err => {
@@ -418,14 +419,16 @@ router.put('/forgotPassword/:id', async (req, res) => {
                 try {
                     await sendEmail({
                         to: emailValue,
-                        from: "agrollytaiwan@gmail.com",
+                        from: "agrollytaiwan@outlook.com",
                         subject: "password Reset for Agrolly Taiwan Account",
                         text: `
                                To reset your password please click the link below:
                                \n 密碼更改請點選下面的連結：
                                ${frontendUrl}/user/passwordReset/${passwordResetCode}
                                `
+                            
                     })
+                    
                     res.sendStatus(200)
                 } catch (e) {
                     console.log(e);
