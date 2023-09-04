@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Cropbase, { foreignKey: 'cropId', as:'cropbase' })
       this.belongsTo(models.User, { foreignKey: 'userId', as:'user'})
+      this.hasMany(models.CropDiary, { foreignKey: 'usercropId' , as: 'cropdiary'})
     }
   }
   Usercrop.init({

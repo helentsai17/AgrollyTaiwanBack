@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Message, { foreignKey: 'userId', as: 'messages' })
       this.hasMany(models.UserLikeCrop, { foreignKey: 'userId' , as: 'userlikecrop'})
       this.hasMany(models.UserCrop, { foreignKey: 'userId' , as: 'usercrop'})
+      this.hasMany(models.CropDiary, { foreignKey: 'userId' , as: 'cropdiary'})
     }
     toJSON() {
       return { ...this.get(), id: undefined }

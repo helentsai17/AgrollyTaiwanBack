@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { PestDisease, CropPestDisease } = require('../models')
+const { PestDisease, CropPest, Cropbase } = require('../models')
 const multer = require('multer')
 const upload = multer({ dest: 'pestuploads/' })
 const { uploadFile, getFileStream } = require('../s3')
@@ -101,6 +101,64 @@ router.get('/list', async (req, res) => {
     } catch (err) {
         console.log(err)
         return res.status(500).json({ error: "Something went wrong getting pests" })
+    }
+})
+
+router.get('/list_pest_crops', async (req, res) => {
+   
+    try {
+        const pests = await PestDisease.findAll({
+            include: [
+                {
+                    model: CropPest,
+                    as: 'croppest',
+                    attributes: ['id','comment'],
+                    include: [
+                        {
+                            model: Cropbase,
+                            as: 'cropbase',
+                            attributes: ['id','common_name', 'chinese_name', 'crop_image'],
+                        }
+
+                    ]
+                },
+            ]
+        })
+        return res.json(pests)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({ error: "Something went wrong List pest crops" })
+    }
+})
+
+
+
+router.get('/pest_crops/:pestId', async (req, res) => {
+    const id = req.params.pestId
+
+    try {
+        const pests = await PestDisease.findOne({
+            where: { id },
+            include: [
+                {
+                    model: CropPest,
+                    as: 'croppest',
+                    attributes: ['id','comment'],
+                    include: [
+                        {
+                            model: Cropbase,
+                            as: 'cropbase',
+                            attributes: ['id','common_name', 'chinese_name', 'crop_image'],
+                        }
+
+                    ]
+                },
+            ]
+        })
+        return res.json(pests)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json({ error: "Something went wrong List pest crops" })
     }
 })
 

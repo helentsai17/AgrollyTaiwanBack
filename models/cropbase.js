@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Media, { foreignKey: 'cropId' , as: 'media'})//crop has many media source
       this.hasMany(models.Seasonplant, { foreignKey: 'cropId' , as: 'seasonplant'})
       this.hasMany(models.Plantmonth, { foreignKey: 'cropId' , as: 'plantmonth'})
+      this.hasMany(models.CropDiary, { foreignKey: 'cropId' , as: 'cropdiary'})
     }
   }
   

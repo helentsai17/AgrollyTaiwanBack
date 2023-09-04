@@ -458,7 +458,7 @@ router.put('/resetPassword/:id', async (req, res) => {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
             req.body.password = hash
 
-            User.update({ password: req.body.password },
+            User.update({ password: req.body.password, verify: true },
                 { where: { password: passwordResetCode } }
             ).then(() => {
                 console.log("password successful reset")

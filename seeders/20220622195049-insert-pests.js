@@ -404,6 +404,19 @@ module.exports = {
           source:"https://www.tndais.gov.tw/theme_data.php?theme=news&sub_theme=news&id=12652",
           createdAt:"2023-08-13",
           updatedAt:"2023-08-13"
+        },{
+          id:33,
+          pic_path: "Anthracnose.jpg",
+          name: "炭疽病",
+          name_en:"Anthracnose",
+          type:"disease",
+          feature:"<p>罹病種子種植後，幼苗子葉上常呈現黑褐色下陷病徵。潮濕時變成水浸狀，快速萎凋而脫落。</p>",
+          affect:"大豆,",
+          description:'<p>病原菌以菌絲在作物殘枝或罹病種子內殘存。於高溫多濕的氣候下會產生分生孢子，其分生孢子常藉空氣傳播。</p>',
+          solution:'<ol><li>清除地面上之枯枝、落葉與果樹上之罹病枝葉、果實，並予以燒毀，以降低果園中病原菌之密度。檬果於萌新梢時或修剪後，亦應施藥保護新生枝葉，可以8-8式或10-10式波爾多液1～2次進行冬防清園處理。施肥時，適量使用石灰、硼砂、有機質，可增加植株抗性。果園地面可覆蓋不織布等，以阻斷地面病菌之飛濺感染。</li><li>檬果開花時期以藥劑防治，等生理落果期停止時，果實於施藥後(藥液乾燥後，無降雨時可於套袋前1週施藥)，立即以紙袋予以套袋，袋口必須密封，為目前較佳之檬果炭疽病防治方法。不同品種使用的套帶顏色與紙質不同，白色套袋適用於愛文檬果。套袋可以減少農藥之施用次數、降低農藥對人畜危害及環境污染。而白色套袋更可增加果實果粉與提升品質及促進果實成熟。</li></ol><p><br></p>',
+          source:"https://www.tndais.gov.tw/theme_data.php?theme=news&sub_theme=news&id=12652",
+          createdAt:"2023-08-13",
+          updatedAt:"2023-08-13"
         }
       ],
       {}

@@ -202,7 +202,7 @@ router.get('/detailinfo/:id', async (req, res) => {
                         {
                             model: PestDisease,
                             as: 'pestdisease',
-                            attributes: ['pic_path', 'name', 'name_en', 'type', 'description'],
+                            attributes: ['id','pic_path', 'name', 'name_en', 'type', 'description'],
                         }
 
                     ]
