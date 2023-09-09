@@ -14,11 +14,11 @@ module.exports = {
         allowNull:false
       },
       userId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull:false
       },
       usercropId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull:false
       },
       image: {

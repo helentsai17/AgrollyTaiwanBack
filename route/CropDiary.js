@@ -1,20 +1,24 @@
 const express = require('express')
 const router = express.Router()
 const { CropDiary } = require('../models')
+const multer = require('multer')
+const upload = multer({ dest: 'useruploads/' })
+const { uploadFile, getFileStream } = require('../s3')
 
 
 router.post('/add', async (req, res) => {
-    const { cropId, userId, usercropId, image, content, date, days } = req.body
+    const { cropId, userId, usercropId, content, date, days } = req.body
 
     const CropDiaryData = {
         cropId: cropId,
         userId: userId,
         usercropId: usercropId,
-        image: image,
         content: content,
         date: date,
         days: days
     }
+
+    console.log(CropDiaryData)
 
     try {
         const cropDiary = await CropDiary.create(CropDiaryData)
@@ -23,6 +27,33 @@ router.post('/add', async (req, res) => {
         console.log(err)
         return res.status(500).json({ error: 'create crop base infomation fall' })
     }
+})
+
+
+router.put('/uploadimage/:id', upload.single('file'), async (req, res) => {
+    const diaryId = req.params.id
+
+    try {
+        const file = req.file
+        console.log(file)
+        const result = await uploadFile(file)
+        console.log(result)
+        const diary = await CropDiary.findOne({ where: { id: diaryId } })
+        diary.image = `${process.env.BACKENDURL}/diary/images/${result.Key}`
+        await diary.save()
+        return await res.json(diary)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ error: 'diary image storage error' })
+    }
+
+})
+
+router.get('/images/:key', (req, res) => {
+    const key = req.params.key
+    const readStream = getFileStream(key)
+    console.log(readStream)
+    readStream.pipe(res) 
 })
 
 

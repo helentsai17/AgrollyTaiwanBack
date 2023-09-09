@@ -28,7 +28,7 @@ var VerifyData = require('./route/Verifydata');
 var Forecast = require('./route/Forecast')
 var Media = require('./route/Media')
 var Seasonplant = require('./route/SeasonPlant')
-var CropDiary = require('/route/CropDiary')
+var CropDiary = require('./route/CropDiary')
 
 
 app.use('/users', Users)

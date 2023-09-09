@@ -21,10 +21,10 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER
     },
     userId: {
-      type:DataTypes.INTEGER
+      type:DataTypes.STRING
     },
     usercropId: {
-      type:DataTypes.INTEGER
+      type:DataTypes.STRING
     },
     image: {
       type:DataTypes.TEXT
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     date: {
       type:DataTypes.DATE
     }, 
-    day: {
+    days: {
       type:DataTypes.INTEGER
     }
   }, {
