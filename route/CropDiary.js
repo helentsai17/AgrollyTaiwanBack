@@ -18,8 +18,6 @@ router.post('/add', async (req, res) => {
         days: days
     }
 
-    console.log(CropDiaryData)
-
     try {
         const cropDiary = await CropDiary.create(CropDiaryData)
         return res.json(cropDiary)
@@ -35,9 +33,7 @@ router.put('/uploadimage/:id', upload.single('file'), async (req, res) => {
 
     try {
         const file = req.file
-        console.log(file)
         const result = await uploadFile(file)
-        console.log(result)
         const diary = await CropDiary.findOne({ where: { id: diaryId } })
         diary.image = `${process.env.BACKENDURL}/diary/images/${result.Key}`
         await diary.save()
@@ -52,7 +48,6 @@ router.put('/uploadimage/:id', upload.single('file'), async (req, res) => {
 router.get('/images/:key', (req, res) => {
     const key = req.params.key
     const readStream = getFileStream(key)
-    console.log(readStream)
     readStream.pipe(res) 
 })
 
@@ -72,6 +67,53 @@ router.get("/usercrop/:usercropId", async function (req, res, next) {
         return res.status(500).json({ error: "crop diary table base on user crop"});
     }
 });
+
+//delete crop and pest's relationship
+router.delete('/usercrop/delete/:diaryId', async (req, res) => {
+    const id = req.params.diaryId
+
+    try {
+        const cropDiary = await CropDiary.findOne({ where: { id: id } })
+        await cropDiary.destroy()
+
+        return res.json({ error: "this diary got destroy"})
+    } catch (err) {
+        return res.status(500).json({ error: "there is some issue not able to delete, pleaes try again."})
+    }
+})
+
+router.get("/editget/:diaryId", async function (req, res, next) {
+    const id = req.params.diaryId
+    try {
+
+        const cropdiary = await CropDiary.findOne({
+            where: { id : id },
+        });
+
+        return res.json(cropdiary);
+    } catch (err) {
+        return res.status(500).json({ error: "issue get diary edit info"});
+    }
+});
+
+router.put('/usercrop/edit/:diaryId', async(req, res) =>{
+    const id = req.params.diaryId
+    const { content, date, days } = req.body
+    
+    try {
+        const cropDiary = await CropDiary.findOne({where: {id:id}})
+
+        cropDiary.content = content
+        cropDiary.date = date
+        cropDiary.days = days
+
+        await cropDiary.save()
+        return res.json(cropDiary)
+
+    } catch (error) {
+        return res.status(500).json({ error: 'some issue with the edit, please try agian' })
+    }
+})
 
 //use for checking crop grow status for future use analist
 router.get("/cropgrow/:cropId", async function (req, res, next) {
